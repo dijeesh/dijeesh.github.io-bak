@@ -4,7 +4,7 @@ permalink: /:title
 # https://help.github.com/articles/migrating-your-pages-site-from-maruku
 markdown: kramdown
 
-highlighter: pygments
+highlighter: rouge
 paginate: 20 # pagination based on number of posts
 paginate_path: "page/:num"
 
@@ -29,5 +29,5 @@ author:
   twitter: dijeeshpnair
   facebook: dijeeshpnair
   googleplus: +dijeeshpnair
-  bio: "Linux | IaaS | PaaS | DevOps Engineer "
+  bio: "Linux | PaaS | IaaS | DevOps Engineer"
   uno-dbyll: https://raw.githubusercontent.com/meliodus/uno-dbyll/gh-pages/uno-dbyll.png
