@@ -34,6 +34,11 @@ border: 3px solid #FFF; height:150px;width:150px" />
 			</a>
 			{% endif %}
 
+			{% if site.author.instagram %}
+			<a type="button" class="social3" href="http://instagram.com/{{ site.author.instagram }}">
+				<i class="fa fa-instagram"></i>
+			</a>
+			{% endif %}
 
 			{% if site.author.email %}
       <a type="button" class="social3" href="mailto:{{ site.author.email }}">
