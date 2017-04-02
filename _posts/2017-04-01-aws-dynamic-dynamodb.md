@@ -34,10 +34,11 @@ Architecture
 ------
 
 <p style="text-align:justify;">
-Here is a sample architecture diagram.
+Here is a sample architecture diagram. </P>
 
 ![Architecture Diagram](assets/media/dynamic_dynamoDB.jpg)
 
+<p style="text-align:justify;">
 
  In this scenario, I do have a custom VPC created for Web Application with 2 Public Subnets in each availability zone for Load Balancers and bastion nodes. Below that two private subnets in each availability zone for Web Service EC2 instances,  RDS multi AZ deployment for database services and below that we do have two subnets ( 1 in each AZ) for management nodes and I have configured a dynamic-dynamodb instance inside an autoscaling group with minimum 1 node running at time.  
 
