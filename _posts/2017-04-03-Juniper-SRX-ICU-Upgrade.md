@@ -49,9 +49,12 @@ Upgrade Steps
  6 Monitor the upgrade process in console session
 
  <br>
+
 Upgrade Procedure + Console logs
-----
+-----
+
 <br>
+
 Validate package and copy to secondary node
 <br>
 > ISSU: Validating package WARNING: in-service-upgrade shall reboot both
