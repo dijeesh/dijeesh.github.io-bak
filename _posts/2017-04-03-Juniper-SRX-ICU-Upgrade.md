@@ -54,7 +54,6 @@ Upgrade Procedure + Console logs
 -----
 
 <br>
-
 Validate package and copy to secondary node
 <br>
 > ISSU: Validating package WARNING: in-service-upgrade shall reboot both
@@ -99,8 +98,10 @@ Reboot primary node, when secondary node is back online
 
 
 <br>
+
 Aborting ICU upgrade
----
+-----
+
 <br>
 <p style="text-align:justify;">
 At any time during the upgrade process, you can abort by running </p>
