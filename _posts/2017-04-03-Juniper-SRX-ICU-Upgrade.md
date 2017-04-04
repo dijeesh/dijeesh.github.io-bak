@@ -9,7 +9,7 @@ comments: true
 ---
 
 <p style="text-align:justify;">
-JunOS versions on Branch devices (SRX100, SRX210, SRX220, SRX240, SRX550, and SRX650 Services Gateways) in a chassis cluster can be upgraded using  in-band cluster upgrade (ICU) method.
+JunOS versions on Branch devices (SRX100, SRX210, SRX220, SRX240, SRX550, and SRX650 Services Gateways) in a chassis cluster can be upgraded using  in-band cluster upgrade (ICU) method. Downtime required for this type of upgrade method is less than 30 seconds.
 </p> <br>
 
 Notes
@@ -32,21 +32,21 @@ Upgrade Steps
 
 <br>
 
-1 Confirm Junos OS Version running on the devices
+**1 Confirm Junos OS Version running on the devices**
  > show version
 
-2 Confirm serial console access to the devices
+**2 Confirm serial console access to the devices**
 
-3 Perform storage clean-up
+**3 Perform storage clean-up**
 
  >  request system storage cleanup
 
- 4 Upload latest Junos OS to `/var/tmp` of node0
+ **4 Upload latest Junos OS to `/var/tmp` of node0**
 
- 5 Perform ICU upgrade
+ **5 Perform ICU upgrade**
  >request system software in-service-upgrade image_name no-sync
 
- 6 Monitor the upgrade process in console session
+ **6 Monitor the upgrade process in console session**
 
  <br>
 
@@ -54,28 +54,28 @@ Upgrade Procedure + Console logs
 -----
 
 <br>
-Validate package and copy to secondary node
+**Validate package and copy to secondary node**
 <br>
 > ISSU: Validating package WARNING: in-service-upgrade shall reboot both
 > the nodes
 >          in your cluster. Please ignore any subsequent
 >          reboot request message ISSU: start downloading software package on secondary node Pushing bundle to node1
 
-Create alternate root partition and extract the image to alternate root partition
+**Create alternate root partition and extract the image to alternate root partition**
 <br>
 > Formatting alternate root (/dev/da0s1a)… /dev/da0s1a: 296.9MB (607996
 > sectors) block size 16384, fragment size 2048 Extracting
 > /var/tmp/junos-srxsme-12.1X46-D55.3-domestic.tgz …
 <br>
 
-ISSU upgrades secondary and then primary node
+**ISSU upgrades secondary and then primary node**
 <br>
 > JUNOS 12.1X46-D55.3 will become active at next reboot ISSU: finished
 > upgrading on secondary node node1 ISSU: start upgrading software
 > package on primary node JUNOS 12.1X46-D55.3 will become active at next reboot
 <br>
 
-Fail over all redundancy groups to node0
+**Fail over all redundancy groups to node0**
 <br>
 > ISSU: failover all redundancy-groups 1…n to primary node Successfully
 > reset all redundancy-groups priority back to configured priority.
@@ -85,12 +85,12 @@ Fail over all redundancy groups to node0
 > redundancy-groups to node0
 <br>
 
-Reboot secondary node
+**Reboot secondary node**
 <br>
 > ISSU: rebooting Secondary Node
 <br>
 
-Reboot primary node, when secondary node is back online
+**Reboot primary node, when secondary node is back online**
 <br>
 > ISSU: Waiting for secondary node node1 to reboot. ISSU: Waiting for
 > node 1 to come up ISSU: node 1 came up ISSU: secondary node node1
@@ -112,16 +112,19 @@ At any time during the upgrade process, you can abort by running </p>
 <p style="text-align:justify;">
 If you have given the abort command during / after secondary node reboots. Your cluster will be un an inconsistent state. ie; secondary node will be running with new version than primary node. You should rollback the upgrade on secondary node by running following commands.</p>
 <br>
-Abort upgrade
+**Abort upgrade**
 > request system software abort in-service-upgrade  <br>
 
 
-Roll back to previous node
+**Roll back to previous node**
 > request system software rollback node < node-id >  
 <br>
 
-Reboot node
+**Reboot node**
 >request system reboot
 
 <br>
 Ref : Juniper KB Articles [SRX] ISSU/ICU upgrade limitations on SRX firewalls , Upgrading Devices in a Chassis Cluster Using ICU
+
+
+Happy Upgrade :)
