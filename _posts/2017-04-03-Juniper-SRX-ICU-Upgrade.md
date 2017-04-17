@@ -26,6 +26,8 @@ Notes
 5. Make sure sufficient disk spaces are available on both nodes.
 <br>
 
+
+
 Upgrade Steps
 ===
 
@@ -126,5 +128,6 @@ If you have given the abort command during / after secondary node reboots. Your 
 <br>
 Ref : Juniper KB Articles [SRX] ISSU/ICU upgrade limitations on SRX firewalls , Upgrading Devices in a Chassis Cluster Using ICU
 
+<br>
 
 Happy Upgrade :)
