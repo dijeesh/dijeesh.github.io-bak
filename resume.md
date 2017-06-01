@@ -1,6 +1,8 @@
 Dijeesh Padinharethil
 ===================
-Padinharethil House, Pandamangalam, Kottakkal, Malappuram, Kerala, India, 676503
-Phone : +91 9895624436  Mail : dijeeshpnair@gmail.com
+
+Working on updating Resume here, will be online soon.
+
+For the time being, Ref linkedin profile :  https://www.linkedin.com/in/dijeesh-padinharethil/
 
 --------

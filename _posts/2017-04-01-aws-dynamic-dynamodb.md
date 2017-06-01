@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Dynamic DynamoDB for monitoring and scaling Amazon DynamoDB
+title: Dynamic DynamoDB for Autoscaling Amazon DynamoDB
 description: Dynamic DynamoDB for monitoring and scaling Amazon DynamoDB
 #image: /assets/media/Lamp.jpg
 Categories: [AWS]
@@ -44,3 +44,6 @@ Here is a sample architecture diagram. </P>
  - dynamic-dynamodb instance is running securely in private subnets.
 
  - dynamic-dynamodb's high availability is ensured by autoscaling group.
+
+
+ In progress.....
