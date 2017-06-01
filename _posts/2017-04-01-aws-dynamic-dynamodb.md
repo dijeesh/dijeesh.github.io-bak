@@ -7,28 +7,24 @@ Categories: [AWS]
 tags: [AWS, dynamic-dynamodb, dynamodb, nosql, dijeeshpnair, devops, ]
 comments: true
 ---
+Autoscaling Amazon DynamoDB
+======
 
-<p style="text-align:justify;">
-In this article, I would like to share how to deploy dynamic-dynamodb for managing and scaling Amazon DynamoDB NoSQL Databases. Amazon Dynamic DynamoDB  is super fast, flexible, consistent and fully managed NoSQL database service from Amazon.  DynamoDB synchronously replicates data across three different facilities in an AWS region. This will ensure high availability and data durability. It's allow horizontal scaling manually or by using any tools like dynamic-dynamodb.
-</p>
-<br>
+Introduction
+----------------
+In this article, I would like to share how to deploy **dynamic-dynamodb** for managing and scaling Amazon DynamoDB NoSQL Databases.
 
-<p style="text-align:justify;">
-You'll need specify read / write capacity units at the time of provisioning the instance and later you can scale up / down manually as per your application requirements. In order to avoid this manual intervention, we can deploy Dynamic DynamoDB and let it monitor and scale up / down the DynamoDB tables as per the requirements. </p> <br>
+Amazon Dynamic DynamoDB  is super fast, flexible, consistent and fully managed NoSQL database service from Amazon.  DynamoDB synchronously replicates data across three different facilities in an AWS region. This will ensure high availability and data durability. It's allow horizontal scaling manually.  But whois going to sit-down and monitor the table capacity and scale up/down whenever required.  Thanks to [Sebastian Dahlgren](https://github.com/sebdah/dynamic-dynamodb) for this wonderful tool called dynamic-dynamodb.
 
-<p style="text-align:justify;">
-Dynamic DynamoDB is a opensource tool created by `[Sebastian Dahlgren]`(https://github.com/sebdah/dynamic-dynamodb). You can either use the CloudFormation template provided in the `[github repository]`(https://github.com/sebdah/dynamic-dynamodb/blob/master/cloudformation-templates/dynamic-dynamodb.json) to provision Dynamic DynamoDB instance or you can manually set one yourself by following the guidelines given bellow.
-</p> <br>
+dynamic-dynamodb will help you to avoid manual intervention for scaling activities by monitoring and scaling up/down based on the policies we defined.
 
-----------
-
+dynamic-dynamodb can be either deployed using the [cloud-formation script](https://github.com/sebdah/dynamic-dynamodb/blob/master/cloudformation-templates/dynamic-dynamodb.json) they provided or manually inside your private subnet by following the instructions given bellow.
 
 How it works
 ----------------
 
-<p style="text-align:justify;">
 Dynamic DynamoDB is a small script that will monitor DynamoDB in specified intervals and scale up / down the DynamoDB table as per the policy we configured.
-</p> <br>
+
 
 Architecture
 ------
@@ -48,10 +44,3 @@ Here is a sample architecture diagram. </P>
  - dynamic-dynamodb instance is running securely in private subnets.
 
  - dynamic-dynamodb's high availability is ensured by autoscaling group.
-
-
-
-Setup
-----
-
------
