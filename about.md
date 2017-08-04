@@ -14,10 +14,10 @@ In love with nature, travel, photography, and football. When not playing with my
 **- Network Redux LLC**  ( Marc 2012 - Present )
 
   - Lead Operations Engineer
-  - Senior Operations Engineer
-  - Senior System Architect
-  - System Architect
-  - Jr System Architect
+  - Senior Operations Engineer ↟
+  - Senior System Architect ↟
+  - System Architect ↟
+  - Jr System Architect ↟
 
 **- International Mobile Sportsbook Company SL / MST Cochin** ( Jan 2011 - Mar 2012 )
 
@@ -27,8 +27,8 @@ In love with nature, travel, photography, and football. When not playing with my
 **- Poornam Info Vision Private Ltd, Bobcares.** ( Sep 2008 - Jan 2011 )
 
   - Team Lead, Internal System Administrator
-  - Internal System Administrator
-  - Jr Internal System Administrator
+  - Internal System Administrator ↟
+  - Jr Internal System Administrator ↟
 
 
 
