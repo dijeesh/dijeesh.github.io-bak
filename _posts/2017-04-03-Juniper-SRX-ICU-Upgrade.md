@@ -13,7 +13,8 @@ JunOS versions on Branch devices (SRX100, SRX210, SRX220, SRX240, SRX550, and SR
 
 
 Notes
-----
+===
+
 <br>
 
 * Drop in traffic (`30 seconds approximately`)
@@ -31,6 +32,7 @@ Notes
 
 Upgrade Steps
 ===
+
 <br>
 
 1 Confirm Junos OS Version running on the devices
@@ -53,8 +55,10 @@ $ request system software in-service-upgrade <image_name> no-sync
 
 
 <br>
+
 Upgrade Procedure + Console logs
-----
+===
+
 <br>
 
 **Validate package and copy to secondary node**
@@ -92,8 +96,10 @@ ISSU: Waiting for secondary node node1 to reboot. ISSU: Waiting for node 1 to co
 
 
 <br>
+
 Aborting ICU upgrade
------
+===
+
 <br>
 
 At any time during the upgrade process, you can abort by running
@@ -105,22 +111,27 @@ request system software abort in-service-upgrade
 If you have given the abort command during / after secondary node reboots. Your cluster will be un an inconsistent state. ie; secondary node will be running with new version than primary node. You should rollback the upgrade on secondary node by running following commands.
 
 <br>
+
 **Abort upgrade**
+
 ```sh
 request system software abort in-service-upgrade
 ```
 
 **Roll back to previous node**
+
 ```sh
 request system software rollback node < node-id >
 ```
 
 **Reboot node**
+
 ```sh
 request system reboot
 ```
 
 <br>
+
 **Ref:**
 - Juniper KB Articles [SRX] ISSU/ICU upgrade limitations on SRX firewalls
 - Upgrading Devices in a Chassis Cluster Using ICU
