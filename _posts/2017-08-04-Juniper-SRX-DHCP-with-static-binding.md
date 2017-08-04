@@ -11,10 +11,10 @@ This article will guide you to configre your SRX firewall device as a DHCP serve
 
 <br>
 
-| Example scenario |  |
-| ------ | ------ |
-| Private Zone subnet | 10.102.100.0/24|
-| Private Zone interface | reth1.0 |
+**Example scenario**
+
+* Private Zone subnet -  10.102.100.0/24
+* Private Zone Interface - reth1.0
 
 <br>
 
@@ -38,19 +38,15 @@ set system services dhcp pool 10.102.100.0/24 router 10.102.100.1
 
 <br>
 
-| Item | Description |
-| ------ | ------ |
-|address-range low | First IP address in your DHCP reserve pool |
-|address-range high | Last IP address in your DHCP reserve pool |
-|default-lease-time |  Local domain name |
-| router | Gateway IP for your local network |
+* address-range low - First IP address in your DHCP reserve pool
+* address-range high - Last IP address in your DHCP reserve pool
+* default-lease-time - Local domain name
+* router - Gateway IP for your local network
 
 
 <br>
 
 **2. Enable host-inbount-traffic for DHCP Service**
-
-<br>
 
 Now you’ve to enable dhcp under host-inbound-traffic rules for your SRX’s private network zone interface
 
@@ -64,8 +60,6 @@ DHCP Service should be now running and it'll lease IP Address to the servers in 
 
 **3 Verify DHCP Bindings**
 
-<br>
-
 Run following command to verify DHCP bindings
 
 ```sh
@@ -75,8 +69,6 @@ show system services dhcp binding
 <br>
 
 **4 Static DHCP Bindings**
-
-<br>
 
 You can bind static IP Addresses to particluar server (Mac Address) as follows.
 
