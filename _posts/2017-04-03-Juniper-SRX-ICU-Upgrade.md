@@ -27,7 +27,7 @@ Notes
 * Make sure sufficient disk spaces are available on both nodes.
 
 
-
+<br>
 
 Upgrade Steps
 ===
@@ -52,6 +52,7 @@ $ request system software in-service-upgrade <image_name> no-sync
 6 Monitor the upgrade process in console session
 
 
+<br>
 Upgrade Procedure + Console logs
 ----
 <br>
@@ -90,6 +91,7 @@ ISSU: Waiting for secondary node node1 to reboot. ISSU: Waiting for node 1 to co
 ```
 
 
+<br>
 Aborting ICU upgrade
 -----
 <br>
@@ -118,6 +120,7 @@ request system software rollback node < node-id >
 request system reboot
 ```
 
+<br>
 **Ref:**
 - Juniper KB Articles [SRX] ISSU/ICU upgrade limitations on SRX firewalls
 - Upgrading Devices in a Chassis Cluster Using ICU
