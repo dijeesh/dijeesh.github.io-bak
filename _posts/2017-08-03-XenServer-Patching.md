@@ -21,7 +21,8 @@ https://support.citrix.com/article/CTX138115`
 Single XenServer Host
 ---
 
-If you’re running XenServer on a single hardware node, following steps can be used to install patches.
+ <br>
+ If you’re running XenServer on a single hardware node, following steps can be used to install patches.
 
 <br>
 **1. Download Hotfix from Citrix Downloads Portal**
@@ -59,7 +60,9 @@ If you’re running a XenServer Pool with shared storage, maintenance for a hard
 In this case, you should download patches to your pool master and apply patches to the entire pool using `patch-pool-apply` command. Then evacuate and reboot hosts starting from pool master.
 
 <br>
+
 Steps for Installing patches in XenServer pool are as follows.
+
 <br>
 
 **1. Take pool database backup**
@@ -96,6 +99,8 @@ xe patch-pool-apply uuid=<patch UUID >
 <br>
 
 **Script usage:-**
+
+<br>
 
 * Download the script and save  `/root/hotfix/apply-hotfix.sh`
 * Set permissions for the script `chmod +x /root/hotfix/apply-hotfix.sh`
