@@ -2,7 +2,6 @@
 layout: post
 title: Juniper SRX DHCP Configuration with Static binding
 description: Juniper SRX DHCP Configuration with Static binding
-#image: /assets/media/Lamp.jpg
 Categories: [AWS]
 tags: [networking, netops, juniper, srx, junos, junipernetworks, dijeeshpnair, devops, ]
 comments: true
