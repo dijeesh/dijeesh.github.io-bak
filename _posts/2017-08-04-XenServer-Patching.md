@@ -4,7 +4,7 @@ title: Applying XenServer Patches
 description: Applying XenServer Patches
 #image: /assets/media/Lamp.jpg
 Categories: [Sysadmin] [Virtualization]
-tags: [networking, xenserver, xen, sysops, dijeeshpnair, devops, ]
+tags: [networking, virtualization, xenserver, xen, upgrade, patching, sysops, dijeeshpnair, devops]
 comments: true
 ---
 
@@ -104,4 +104,4 @@ xe patch-pool-apply uuid=<patch UUID >
 
 This will upload and apply patches on all pool members. Once finished, you may evacuate and reboot pool members starting from the pool master or restart tool-stack as instructed while applying the patch.
 
-Happy Upgrade 🙂 
+Happy Upgrade 🙂
