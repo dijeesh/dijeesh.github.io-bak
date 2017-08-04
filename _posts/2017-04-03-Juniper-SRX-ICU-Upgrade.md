@@ -61,35 +61,35 @@ Upgrade Procedure + Console logs
 
 <br>
 
-**Validate package and copy to secondary node**
+Validate package and copy to secondary node
 
 ```sh
 ISSU: Validating package WARNING: in-service-upgrade shall reboot both the nodes in your cluster. Please ignore any subsequent reboot request message ISSU: start downloading software package on secondary node Pushing bundle to node1
 ```
 
-**Create alternate root partition and extract the image to alternate root partition**
+Create alternate root partition and extract the image to alternate root partition
 
 ```sh
 Formatting alternate root (/dev/da0s1a)… /dev/da0s1a: 296.9MB (607996 sectors) block size 16384, fragment size 2048 Extracting /var/tmp/junos-srxsme-12.1X46-D55.3-domestic.tgz …
 ```
 
-**ISSU upgrades secondary and then primary node**
+ISSU upgrades secondary and then primary node
 
 ```sh
 JUNOS 12.1X46-D55.3 will become active at next reboot ISSU: finished upgrading on secondary node node1 ISSU: start upgrading software package on primary node JUNOS 12.1X46-D55.3 will become active at next reboot
 ```
 
-**Fail over all redundancy groups to node0**
+Fail over all redundancy groups to node0
 ```sh
 ISSU: failover all redundancy-groups 1…n to primary node Successfully reset all redundancy-groups priority back to configured priority. node1: ————————————————————————– Successfully reset all redundancy-groups priority back to configured priority. node0:  ————————————————————————– Initiated manual failover for all redundancy-groups to node0
 ```
 
-**Reboot secondary node**
+Reboot secondary node
 ```sh
 ISSU: rebooting Secondary Node
 ```
 
-**Reboot primary node, when secondary node is back online**
+Reboot primary node, when secondary node is back online
 ```sh
 ISSU: Waiting for secondary node node1 to reboot. ISSU: Waiting for node 1 to come up ISSU: node 1 came up ISSU: secondary node node1 booted up.
 ```
@@ -107,6 +107,8 @@ At any time during the upgrade process, you can abort by running
 ```sh
 request system software abort in-service-upgrade
 ```
+
+<br>
 
 If you have given the abort command during / after secondary node reboots. Your cluster will be un an inconsistent state. ie; secondary node will be running with new version than primary node. You should rollback the upgrade on secondary node by running following commands.
 
