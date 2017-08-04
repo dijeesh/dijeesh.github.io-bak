@@ -1,5 +1,3 @@
-About Me
-===================
 
 About
 =======
@@ -13,32 +11,52 @@ In love with nature, photography, and football.
 
 Recent work history
 -------------
-- Network Redux LLC ( Marc 2012 - Present )
+**- Network Redux LLC**
+( Marc 2012 - Present )
+
   - Lead Operations Engineer at Network Redux
+
   - Senior Operations Engineer at Network Redux
+
   - Senior System Architect at Network Redux
+
   - System Architect at Network Redux
+
   - Jr System Architect at Network Redux
 
-- International Mobile Sportsbook Company SL / MST Cochin  ( Jan 2011 - Mar 2012 )
+
+**- International Mobile Sportsbook Company SL / MST Cochin**  
+  ( Jan 2011 - Mar 2012 )
+
   - System / Infrastructure Administrator
+
   - Production Support Lead
 
-- Poornam Info Vision Private Ltd, Bobcares. ( Sep 2008 - Jan 2011 )
+
+**- Poornam Info Vision Private Ltd, Bobcares.**
+  ( Sep 2008 - Jan 2011 )
+
   - Team Lead, Internal System Administrator
+
   - Internal System Administrator
+
   - Jr Internal System Administrator
 
 
 Areas of expertise
 -------------
 - Systems design and Administration
-- Cloud platform design, support, and administration (AWS)
-- Virtualization, Containerization
-- Linux Administration
-- Database Administration
-- Backups and Storage Administration
-- Network Administration
-- High Availability (HA), Load balancing and clustering
 
---------
+- Cloud platform design, support, and administration (AWS)
+
+- Virtualization, Containerization
+
+- Linux Administration
+
+- Database Administration
+
+- Backups and Storage Administration
+
+- Network Administration
+
+- High Availability (HA), Load balancing and clustering
