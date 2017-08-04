@@ -3,11 +3,10 @@ layout: post
 title: Applying XenServer Patches
 description: Applying XenServer Patches
 #image: /assets/media/Lamp.jpg
-Categories: [Sysadmin] [Virtualization]
+Categories: [Virtualization]
 tags: [networking, virtualization, xenserver, xen, upgrade, patching, sysops, dijeeshpnair, devops]
 comments: true
 ---
-
 
 For better performance and security it’s recommended to install all patches released by XenServer. In this article I would like to share the steps for applying patches on XenServer and XenServer pool
 
