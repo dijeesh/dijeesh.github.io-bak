@@ -103,6 +103,7 @@ Aborting ICU upgrade
 <br>
 
 At any time during the upgrade process, you can abort by running
+<br>
 
 ```sh
 request system software abort in-service-upgrade
@@ -114,19 +115,19 @@ If you have given the abort command during / after secondary node reboots. Your 
 
 <br>
 
-**Abort upgrade**
+Abort upgrade
 
 ```sh
 request system software abort in-service-upgrade
 ```
 
-**Roll back to previous node**
+Roll back to previous node
 
 ```sh
 request system software rollback node < node-id >
 ```
 
-**Reboot node**
+Reboot node
 
 ```sh
 request system reboot
