@@ -10,6 +10,7 @@ comments: true
 
 For better performance and security it’s recommended to install all patches released by XenServer. In this article I would like to share the steps for applying patches on XenServer and XenServer pool
 
+<br>
 Ref following Citrix Article to get list of recommended patches for your XenServer Version.
 
 ```sh
