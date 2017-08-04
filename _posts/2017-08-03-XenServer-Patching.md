@@ -50,6 +50,8 @@ xe patch-upload file-name=<patchxxx.xsupdate>
 ```sh
 xe patch-apply uuid=<patch UUID step 4>  host-uuid=<host UUID step 3>
 ```
+<br>
+<br>
 
 XenServer pool
 ---
@@ -106,6 +108,7 @@ xe patch-pool-apply uuid=<patch UUID >
 * Set permissions for the script `chmod +x /root/hotfix/apply-hotfix.sh`
 * Apply Patches `./apply-hotfix.sh <patch.xsupdate>`
 
+<br>
 This will upload and apply patches on all pool members. Once finished, you may evacuate and reboot pool members starting from the pool master or restart tool-stack as instructed while applying the patch.
 
 Happy Upgrade 🙂
