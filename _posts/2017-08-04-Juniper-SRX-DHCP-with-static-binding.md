@@ -10,10 +10,12 @@ comments: true
 This article will guide you to configre your SRX firewall device as a DHCP server for your local networks and binding static IP Address for specific MAC Addresses.
 
 <br>
+
 | Example scenario |  |
 | ------ | ------ |
 | Private Zone subnet | 10.102.100.0/24|
 | Private Zone interface | reth1.0 |
+
 <br>
 
 Steps:
@@ -23,6 +25,8 @@ Steps:
 **1 Configure DHCP Service**
 
 Commit following rules to configure your SRX device to act as a DHCP Server.
+<br>
+
 
 ```sh
 set system services dhcp pool 10.102.100.0/24 address-range low 10.102.100.100
@@ -32,6 +36,8 @@ set system services dhcp pool 10.102.100.0/24 domain-name lab-network.net
 set system services dhcp pool 10.102.100.0/24 router 10.102.100.1
 ```
 
+<br>
+
 | Item | Description |
 | ------ | ------ |
 |address-range low | First IP address in your DHCP reserve pool |
@@ -39,7 +45,12 @@ set system services dhcp pool 10.102.100.0/24 router 10.102.100.1
 |default-lease-time |  Local domain name |
 | router | Gateway IP for your local network |
 
+
+<br>
+
 **2. Enable host-inbount-traffic for DHCP Service**
+
+<br>
 
 Now you’ve to enable dhcp under host-inbound-traffic rules for your SRX’s private network zone interface
 
@@ -49,7 +60,11 @@ set security zones security-zone PRIVATE_NETWORK interfaces reth1.0 host-inbound
 
 DHCP Service should be now running and it'll lease IP Address to the servers in your Local Network.
 
+<br>
+
 **3 Verify DHCP Bindings**
+
+<br>
 
 Run following command to verify DHCP bindings
 
@@ -57,7 +72,11 @@ Run following command to verify DHCP bindings
 show system services dhcp binding
 ```
 
+<br>
+
 **4 Static DHCP Bindings**
+
+<br>
 
 You can bind static IP Addresses to particluar server (Mac Address) as follows.
 
