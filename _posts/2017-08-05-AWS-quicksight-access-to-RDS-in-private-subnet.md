@@ -37,19 +37,19 @@ Here is a rough architecture diagram:
 5. Install and configure HaProxy service in EC2 instance.
 <br>
 
-    ```sh
+```
     yum install haproxy
-    ```
+```
 <br>
 
-   ```sh
+```
    mv /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg_bak
    vi /etc/haproxy/haproxy.cfg
    Add following configuration
-   ```   
+```   
 <br>
 
-   ```sh
+```
     global
       log /dev/log    local0
       log /dev/log    local1 notice
@@ -66,4 +66,4 @@ Here is a rough architecture diagram:
       timeout server 1m
       mode tcp
       server rds-prod-cluster  rds-prod-cluster.cluster-xxxxx.xx-xxxx-x.rds.amazonaws.com:3306
-  ```
+```
