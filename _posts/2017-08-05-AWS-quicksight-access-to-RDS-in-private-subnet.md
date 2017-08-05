@@ -14,9 +14,13 @@ AWS Quicksight access for RDS instance in VPC Private subnets.
 
 Amazon Quicksight is a powerful data visualization tool in AWS Cloud. It will help you to get business insights from your data. Working with Data on Quicksight is very easy, you may just go through its documentation.
 
+<br>
+
 ## Connection issues
 
 However, if you're trying to source data from RDS instance, you'll find difficulties if the RDS instance in your VPC Private subnet. And a simple solution for this issue is put a proxy instance in your public instance and instruct Quicksight to connect the proxy instance over Public Network.
+
+<br>
 
 Here is a rough architecture diagram:
 
@@ -36,27 +40,30 @@ Here is a rough architecture diagram:
     ```sh
     yum install haproxy
     ```
+<br>
 
-   ```
+   ```sh
    mv /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg_bak
    vi /etc/haproxy/haproxy.cfg
    Add following configuration
    ```   
-   
-   ```
+<br>
+
+   ```sh
    global
-       log /dev/log    local0
-       log /dev/log    local1 notice
-       chroot /var/lib/haproxy
-           maxconn 4000
-           user haproxy
-           group haproxy
-           daemon
-           stats socket /var/lib/haproxy/stats mode 777
+   log /dev/log    local0
+   log /dev/log    local1 notice
+   chroot /var/lib/haproxy
+   maxconn 4000
+   user haproxy
+   group haproxy
+   daemon
+   stats socket /var/lib/haproxy/stats mode 777
 
 listen MySQL 0.0.0.0:3306
-        timeout connect 10s
-        timeout client 1m
-        timeout server 1m
-        mode tcp
-        server rds-prod-cluster  rds-prod-cluster.cluster-xxxxx.xx-xxxx-x.rds.amazonaws.com:3306
+   timeout connect 10s
+   timeout client 1m
+   timeout server 1m
+   mode tcp
+   server rds-prod-cluster  rds-prod-cluster.cluster-xxxxx.xx-xxxx-x.rds.amazonaws.com:3306
+   ```
