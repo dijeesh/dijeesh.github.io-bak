@@ -51,7 +51,7 @@ Add following configuration
 <br>
 
 ```
- vi /etc/haproxy/haproxy.cfg
+vi /etc/haproxy/haproxy.cfg
 
 global
       log /dev/log    local0
@@ -72,8 +72,12 @@ listen MySQL 0.0.0.0:3306
 ```
 
 
+<br>
 Now try to add Data source in your Quicksight dashboard, select MySQL, provide Public IP Address of your EC2 instance and MySQL credentials that you have created earlier.
 
+<br>
 Quicksight will connect to EC2 instance and HaProxy Service running on EC2 instance will forward the traffic to RDS in Private subnet.
+
+<br>
 
 Enjoy the power of data visualization !!
