@@ -49,8 +49,8 @@ Here is a rough architecture diagram:
    ```   
 <br>
 
- ``` sh
-   global
+```sh
+global
       log /dev/log    local0
       log /dev/log    local1 notice
       chroot /var/lib/haproxy
@@ -60,10 +60,10 @@ Here is a rough architecture diagram:
       daemon
       stats socket /var/lib/haproxy/stats mode 777
 
-   listen MySQL 0.0.0.0:3306
+listen MySQL 0.0.0.0:3306
       timeout connect 10s
       timeout client 1m
       timeout server 1m
       mode tcp
       server rds-prod-cluster  rds-prod-cluster.cluster-xxxxx.xx-xxxx-x.rds.amazonaws.com:3306
-   ```
+```
