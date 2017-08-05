@@ -6,7 +6,7 @@ I’m a passionate learner, solution architect, problem solver and karma believe
 
 
 # More Information
-In love with nature, travel, photography, and football. When not playing with my usual DevOps and Sysadmin works at Network Redux I spend my time watching travel vlogs, playing football / badminton, taking photos etc..
+In love with nature, travel, photography, and football. When not playing with my usual SysAdmin and DevOps works at Network Redux or learning new skills, I spend my time watching travel vlogs, playing football/badminton, taking photos etc..
 
 
 # Recent work history
@@ -24,7 +24,7 @@ In love with nature, travel, photography, and football. When not playing with my
   - System / Infrastructure Administrator
   - Production Support Lead
 
-**- Poornam Info Vision Private Ltd, Bobcares.** ( Sep 2008 - Jan 2011 )
+**- Poornam Info Vision Private Ltd, Bobcares** ( Sep 2008 - Jan 2011 )
 
   - Team Lead, Internal System Administrator
   - Internal System Administrator ↟
@@ -42,6 +42,7 @@ In love with nature, travel, photography, and football. When not playing with my
 - Backups and Storage Administration
 - Network Administration
 - High Availability (HA), Load balancing and clustering
+
 
 # Contact
 

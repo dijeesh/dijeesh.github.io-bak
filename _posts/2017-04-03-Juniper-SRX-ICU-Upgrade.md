@@ -4,7 +4,7 @@ title: Juniper SRX Cluster – Branch Devices – ICU Upgrade
 description: Juniper SRX Cluster – Branch Devices – ICU Upgrade
 #image: /assets/media/Lamp.jpg
 Categories: [Networking]
-tags: [networking, netops, juniper, srx, junos, junipernetworks, dijeeshpnair, devops, ]
+tags: [networking, netops, juniper, srx, junos, junipernetworks, dijeeshpnair, devops ]
 comments: true
 ---
 
