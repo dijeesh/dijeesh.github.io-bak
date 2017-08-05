@@ -4,7 +4,7 @@ title: AWS Quicksight access for RDS instance in VPC Private subnets
 description: AWS Quicksight access for RDS instance in VPC Private subnets
 #image: /assets/media/Lamp.jpg
 Categories: [AWS]
-tags: [aws, rds, quicksight, haproxy, sysops, dijeeshpnair, devops]
+tags: [AWS, rds, quicksight, haproxy, mysql, visualization, sysops, dijeeshpnair, devops]
 comments: true
 ---
 
@@ -51,19 +51,19 @@ Here is a rough architecture diagram:
 
    ```sh
    global
-   log /dev/log    local0
-   log /dev/log    local1 notice
-   chroot /var/lib/haproxy
-   maxconn 4000
-   user haproxy
-   group haproxy
-   daemon
-   stats socket /var/lib/haproxy/stats mode 777
+      log /dev/log    local0
+      log /dev/log    local1 notice
+      chroot /var/lib/haproxy
+      maxconn 4000
+      user haproxy
+      group haproxy
+      daemon
+      stats socket /var/lib/haproxy/stats mode 777
 
-listen MySQL 0.0.0.0:3306
-   timeout connect 10s
-   timeout client 1m
-   timeout server 1m
-   mode tcp
-   server rds-prod-cluster  rds-prod-cluster.cluster-xxxxx.xx-xxxx-x.rds.amazonaws.com:3306
+   listen MySQL 0.0.0.0:3306
+      timeout connect 10s
+      timeout client 1m
+      timeout server 1m
+      mode tcp
+      server rds-prod-cluster  rds-prod-cluster.cluster-xxxxx.xx-xxxx-x.rds.amazonaws.com:3306
    ```
