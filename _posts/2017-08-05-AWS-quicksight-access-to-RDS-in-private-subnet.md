@@ -34,23 +34,26 @@ Here is a rough architecture diagram:
 2. Configure Security Group to allow connectivity to RDS MySQL cluster from the EC2 instance.
 3. Configure Security Group to allow Quicksight connections into the EC2 instance.
 4. Confirm MySQL connectivity from EC2 instance to the RDS Cluster.
-5. Install and configure HaProxy service in EC2 instance.
+5. Createa a MySQL user with `select` and `execute` privileges
+6. Install and configure HaProxy service in EC2 instance.
 <br>
 
 ```
-    yum install haproxy
+yum install haproxy
 ```
 <br>
 
 ```
-   mv /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg_bak
-   vi /etc/haproxy/haproxy.cfg
-   Add following configuration
+mv /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg_bak     
 ```   
 <br>
+Add following configuration
+<br>
 
 ```
-    global
+ vi /etc/haproxy/haproxy.cfg
+
+global
       log /dev/log    local0
       log /dev/log    local1 notice
       chroot /var/lib/haproxy
@@ -60,10 +63,17 @@ Here is a rough architecture diagram:
       daemon
       stats socket /var/lib/haproxy/stats mode 777
 
-   listen MySQL 0.0.0.0:3306
+listen MySQL 0.0.0.0:3306
       timeout connect 10s
       timeout client 1m
       timeout server 1m
       mode tcp
       server rds-prod-cluster  rds-prod-cluster.cluster-xxxxx.xx-xxxx-x.rds.amazonaws.com:3306
 ```
+
+
+Now try to add Data source in your Quicksight dashboard, select MySQL, provide Public IP Address of your EC2 instance and MySQL credentials that you have created earlier.
+
+Quicksight will connect to EC2 instance and HaProxy Service running on EC2 instance will forward the traffic to RDS in Private subnet.
+
+Enjoy the power of data visualization !!
