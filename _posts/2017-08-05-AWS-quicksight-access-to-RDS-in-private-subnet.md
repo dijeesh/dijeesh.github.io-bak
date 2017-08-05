@@ -10,7 +10,7 @@ comments: true
 
 ## Quicksight
 
-AWS Quicksight access for RDS instance in VPC Private subnets.
+<br>
 
 Amazon Quicksight is a powerful data visualization tool in AWS Cloud. It will help you to get business insights from your data. Working with Data on Quicksight is very easy, you may just go through its documentation.
 
@@ -49,7 +49,7 @@ Here is a rough architecture diagram:
    ```   
 <br>
 
-   ```sh
+ ``` sh
    global
       log /dev/log    local0
       log /dev/log    local1 notice
