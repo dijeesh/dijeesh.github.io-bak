@@ -79,5 +79,6 @@ Now try to add Data source in your Quicksight dashboard, select MySQL, provide P
 Quicksight will connect to EC2 instance and HaProxy Service running on EC2 instance will forward the traffic to RDS in Private subnet.
 
 <br>
+Note : Lock down all other connections to the EC2 instance.
 
 Enjoy the power of data visualization !!
