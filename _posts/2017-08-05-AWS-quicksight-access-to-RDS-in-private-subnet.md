@@ -18,7 +18,7 @@ Amazon Quicksight is a powerful data visualization tool in AWS Cloud. It will he
 
 ## Connection issues
 
-However, if you're trying to source data from RDS instance, you'll find difficulties if the RDS instance in your VPC Private subnet. And a simple solution for this issue is put a proxy instance in your public instance and instruct Quicksight to connect the proxy instance over Public Network.
+However, if you're trying to source data from RDS instance, you'll find difficulties if the RDS instance in your VPC Private subnet. And a simple solution for this issue is put a proxy instance in your public subnet and instruct Quicksight to connect the proxy instance over Public Network.
 
 <br>
 
