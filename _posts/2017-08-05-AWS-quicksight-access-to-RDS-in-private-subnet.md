@@ -81,4 +81,5 @@ Quicksight will connect to EC2 instance and HaProxy Service running on EC2 insta
 <br>
 Note : Lock down all other connections to the EC2 instance.
 
+<br>
 Enjoy the power of data visualization !!
