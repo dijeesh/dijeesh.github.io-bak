@@ -8,21 +8,19 @@ tags: [devops, sysops, gitlab-ce, git, centos7, devops, dijeeshpnair ]
 comments: true
 ---
 
-Install and Configure Gitlab CE Server in AWS
-===================
-
 Introduction
 -------------
 Hey there, this is the first part of my blog series `Getting started with CI/CD on AWS with GitLab CE`
 
 
-
+<br>
 
 GitLab Community Edition (CE) is an open source end-to-end software development platform with built-in version control, issue tracking, code review, CI/CD and much more, check [official documentation](https://gitlab.com/gitlab-org/gitlab-ce) for more information.  Due to security considerations, we have provisioned our own private GitLab-CE server for many of our clients builds even though gitlab.com hosted solution and many pre-configured AMIs are available in AWS. Here are the steps to set-up a Gitlab-CE server.
 
 
 
 <br>
+
 Provision EC2 Instance
 -------------------
 
@@ -37,6 +35,7 @@ Provision EC2 Instance
 
 
 <br>
+
   Basic System setup
 -------------------
 
@@ -81,6 +80,7 @@ Provision EC2 Instance
 
 
 <br>
+
   Install GitLab CE
 -------------------
 
@@ -131,6 +131,7 @@ GitLab CE Initial setup
 
 
 <br>
+
 GitLab CE Secure using LetsEncrypt Certificates
 -------------------
 Let's secure our GitLab instance using Free LetsEncrypt SSL Certificates
