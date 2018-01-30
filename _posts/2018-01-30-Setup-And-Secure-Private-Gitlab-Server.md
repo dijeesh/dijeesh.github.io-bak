@@ -10,7 +10,7 @@ comments: true
 
 Introduction
 -------------
-Hey there, this is the first part of my blog series `Getting started with CI/CD on AWS with GitLab CE`
+Hey there, this is the first part of my blog series `Getting started with CI/CD on AWS platform using GitLab CE`
 
 
 <br>
@@ -171,23 +171,20 @@ Let's secure our GitLab instance using Free LetsEncrypt SSL Certificates
 - Update Gitlab Nginx Configuration
 ```
   Edit /etc/gitlab/gitlab.rb and
+```
 
-
-
-  1. Update external_url to use https
+```
+1 Update external_url to use https
   external_url 'https://gitlab.yourdomain.com'
 
-
-
-  2. Update redirect_http_to_https settings and set to true
+2 Update redirect_http_to_https settings and set to true
   nginx['redirect_http_to_https'] = true
 
-
-
-  3. Specify SSL Certificates
+3 Specify SSL Certificates
   nginx['ssl_certificate'] = "/etc/letsencrypt/live/gitlab.yourdomain.com/fullchain.pem"
   nginx['ssl_certificate_key'] = "/etc/letsencrypt/live/gitlab.yourdomain.com/privkey.pem"
 ```
+
 
 - Reconfigure GitLab
 ```
