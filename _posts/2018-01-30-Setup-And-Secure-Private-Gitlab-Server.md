@@ -15,7 +15,13 @@ Introduction
 -------------
 Hey there, this is the first part of my blog series `Getting started with CI/CD on AWS with GitLab CE`
 
+
+
+
 GitLab Community Edition (CE) is an open source end-to-end software development platform with built-in version control, issue tracking, code review, CI/CD and much more, check [official documentation](https://gitlab.com/gitlab-org/gitlab-ce) for more information.  Due to security considerations, we have provisioned our own private GitLab-CE server for many of our clients builds even though gitlab.com hosted solution and many pre-configured AMIs are available in AWS. Here are the steps to set-up a Gitlab-CE server.
+
+
+
 
 Provision EC2 Instance
 -------------------
@@ -27,14 +33,16 @@ Provision EC2 Instance
 - Enable basic monitoring for the EC2 instance ( StatusCheckFailed )
 -  Assign an EIP
 
+
+
+
   Basic System setup
 -------------------
 
 - Install system updates
-
- ```
+```
   yum update -y
- ```
+```
 
 - Disable SELinux
 ```
@@ -42,19 +50,16 @@ Provision EC2 Instance
 ```
 
 - Install basic system management tools
-
 ```
   yum install -y net-tools wget curl lsof screen ntp dstat
 ```
 
 - Disable SSH Password Authentification
-
 ```
   sed -i 's/PasswordAuthentication\ yes/PasswordAuthentication\ no/g' /etc/ssh/sshd_config
 ```
 
 - Set static system hostname
-
 ```
   hostnamectl set-hostname nr-oprs-db-002.dc4.sea.networkredux.net
   hostnamectl set-hostname "nr-oprs-db-002.dc4.sea.networkredux.net" --pretty
@@ -64,38 +69,40 @@ Provision EC2 Instance
 
 - Update /etc/hosts
 ```
-grep $(hostname) /etc/hosts || echo -e "127.1.0.1\t$(hostname)\t$(hostname -s)" >> /etc/hosts
+  grep $(hostname) /etc/hosts || echo -e "127.1.0.1\t$(hostname)\t$(hostname -s)" >> /etc/hosts
 ```
 
 - Restart EC2 instance.
+```
+  reboot
+```
 
-```
-reboot
-```
+
+
 
   Install GitLab CE
 -------------------
 
 - Install dependencies
+```
+  yum install -y curl policycoreutils-python openssh-server
+  systemctl enable sshd
+  systemctl start sshd
+```
 
-```
-yum install -y curl policycoreutils-python openssh-server
-systemctl enable sshd
-systemctl start sshd
-```
 - Install and configure Postfix MTA
 ```
-yum install postfix
-systemctl enable postfix
-systemctl start postfix
+  yum install postfix
+  systemctl enable postfix
+  systemctl start postfix
 ```
-- Add the GitLab package repository
 
+- Add the GitLab package repository
 ```
 curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash
 ```
--  Install Gitlab CE
 
+-  Install Gitlab CE
 ```
 sudo EXTERNAL_URL="http://gitlab.yourdomain.com" yum install -y gitlab-ce
 ```
@@ -103,6 +110,9 @@ sudo EXTERNAL_URL="http://gitlab.yourdomain.com" yum install -y gitlab-ce
 - Complete the installation
 
 - Navigate your browser to http://gitlab.yourdomain.com and you will be redirected to reset root password for your installation.
+
+
+
 
 
 GitLab CE Initial setup
@@ -117,61 +127,73 @@ GitLab CE Initial setup
 
 
 
+
+
+
 GitLab CE Secure using LetsEncrypt Certificates
 -------------------
 Let's secure our GitLab instance using Free LetsEncrypt SSL Certificates
 
 - Install epel repository
 ```
-yum install epel-release -y
+  yum install epel-release -y
 ```
+
 - Install Certbot
 ```
-yum install certbot -y
+  yum install certbot -y
 ```
+
 - Create directory for LetsEncrypt verification files
 ```
-mkdir -p /var/www/public/letsencrypt
+  mkdir -p /var/www/public/letsencrypt
 ```
+
 - Update Gitlab Nginx Configuration
 ```
-Edit /etc/gitlab/gitlab.rb and in GitLab NGINX add following line
+  Edit /etc/gitlab/gitlab.rb and in GitLab NGINX add following line
 
-nginx['custom_gitlab_server_config'] = "location ^~ /.well-known { root /var/www/public/letsencrypt; }"
+  nginx['custom_gitlab_server_config'] = "location ^~ /.well-known { root /var/www/public/letsencrypt; }"
 ```
+
 - Reconfigure GitLab
+```
+  gitlab-ctl reconfigure
+```
 
-```
-gitlab-ctl reconfigure
-```
 - Request SSL Certificates
 ```
-certbot certonly --webroot --webroot-path=/var/www/public/letsencrypt -d gitlab.yourdomain.com
+  certbot certonly --webroot --webroot-path=/var/www/public/letsencrypt -d gitlab.yourdomain.com
 ```
+
 - Update Gitlab Nginx Configuration
 ```
-Edit /etc/gitlab/gitlab.rb and
+  Edit /etc/gitlab/gitlab.rb and
 
-1. Update external_url to use https
-external_url 'https://gitlab.yourdomain.com'
+  1. Update external_url to use https
+  external_url 'https://gitlab.yourdomain.com'
 
-2. Update redirect_http_to_https settings and set to true
-nginx['redirect_http_to_https'] = true
+  2. Update redirect_http_to_https settings and set to true
+  nginx['redirect_http_to_https'] = true
 
-3. Specify SSL Certificates
-nginx['ssl_certificate'] = "/etc/letsencrypt/live/gitlab.yourdomain.com/fullchain.pem"
-nginx['ssl_certificate_key'] = "/etc/letsencrypt/live/gitlab.yourdomain.com/privkey.pem"
+  3. Specify SSL Certificates
+  nginx['ssl_certificate'] = "/etc/letsencrypt/live/gitlab.yourdomain.com/fullchain.pem"
+  nginx['ssl_certificate_key'] = "/etc/letsencrypt/live/gitlab.yourdomain.com/privkey.pem"
 
 ```
+
 - Reconfigure GitLab
 ```
 gitlab-ctl reconfigure
 ```
+
 - Setup cronjob for SSL renewal
 ```
-crontab -e
-0 2 1 * * root /usr/bin/certbot renew --quiet --renew-hook "/usr/bin/gitlab-ctl restart nginx"
+  crontab -e
+  0 2 1 * * root /usr/bin/certbot renew --quiet --renew-hook "/usr/bin/gitlab-ctl restart nginx"
 ```
+
+
 
 Alright, now we have our GitLab instance up and running.
 
@@ -183,4 +205,6 @@ Alright, now we have our GitLab instance up and running.
 
 
 
-Happy coding :HEART:
+
+
+Happy Coding !!
