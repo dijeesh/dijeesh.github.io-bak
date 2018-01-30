@@ -1,4 +1,4 @@
-# About
+# Hola,
 
 A dynamic, self-motivated Information Technology Professional with around 9+ years of hands on experience in building and managing highly available, secure, redundant, scalable systems and solutions from scratch.
 
@@ -34,11 +34,11 @@ In love with nature, travel, photography, and football. When not playing with my
 
 # Areas of expertise
 
-- Systems design and Administration
-- Cloud platform design, support, and administration (AWS)
+- Linux System Administration
+- Cloud (Private | Public | Hybrid ) Solution Architect
+- DevOPS Consultant
 - Virtualization, Containerization
-- Linux Administration
-- Database Administration
+- Database Administration (MySQL, Postgres, Aurora, MongoDB)
 - Backups and Storage Administration
 - Network Administration
 - High Availability (HA), Load balancing and clustering
