@@ -24,6 +24,7 @@ GitLab Community Edition (CE) is an open source end-to-end software development 
 Provision EC2 Instance
 -------------------
 
+<br>
 - Provision a t2.medium instance [ CentOS 7 AMI ]
 
 - Open HTTP, HTTPS and SSH connections in Security Group settings
@@ -39,6 +40,7 @@ Provision EC2 Instance
   Basic System setup
 -------------------
 
+<br>
 - Install system updates
 ```
   yum update -y
@@ -84,6 +86,7 @@ Provision EC2 Instance
   Install GitLab CE
 -------------------
 
+<br>
 - Install dependencies
 ```
   yum install -y curl policycoreutils-python openssh-server
@@ -118,6 +121,9 @@ sudo EXTERNAL_URL="http://gitlab.yourdomain.com" yum install -y gitlab-ce
 
 GitLab CE Initial setup
 -------------------
+
+<br>
+
 - Go to http://gitlab.yourdomain.com and login to GitLab using the root credentials you created.
 
 - Go to profile settings and setup root user's Email account
@@ -134,6 +140,9 @@ GitLab CE Initial setup
 
 GitLab CE Secure using LetsEncrypt Certificates
 -------------------
+
+<br>
+
 Let's secure our GitLab instance using Free LetsEncrypt SSL Certificates
 
 - Install epel repository
