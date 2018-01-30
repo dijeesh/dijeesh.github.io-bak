@@ -22,7 +22,7 @@ GitLab Community Edition (CE) is an open source end-to-end software development 
 
 
 
-
+<br>
 Provision EC2 Instance
 -------------------
 
@@ -31,11 +31,12 @@ Provision EC2 Instance
 - Open HTTP, HTTPS and SSH connections in Security Group settings
 
 - Enable basic monitoring for the EC2 instance ( StatusCheckFailed )
+
 -  Assign an EIP
 
 
 
-
+<br>
   Basic System setup
 -------------------
 
@@ -79,7 +80,7 @@ Provision EC2 Instance
 
 
 
-
+<br>
   Install GitLab CE
 -------------------
 
@@ -113,7 +114,7 @@ sudo EXTERNAL_URL="http://gitlab.yourdomain.com" yum install -y gitlab-ce
 
 
 
-
+<br>
 
 GitLab CE Initial setup
 -------------------
@@ -129,7 +130,7 @@ GitLab CE Initial setup
 
 
 
-
+<br>
 GitLab CE Secure using LetsEncrypt Certificates
 -------------------
 Let's secure our GitLab instance using Free LetsEncrypt SSL Certificates
@@ -169,17 +170,19 @@ Let's secure our GitLab instance using Free LetsEncrypt SSL Certificates
 - Update Gitlab Nginx Configuration
 ```
   Edit /etc/gitlab/gitlab.rb and
-
+```
+```
   1. Update external_url to use https
   external_url 'https://gitlab.yourdomain.com'
-
+```
+```
   2. Update redirect_http_to_https settings and set to true
   nginx['redirect_http_to_https'] = true
-
+```
+```
   3. Specify SSL Certificates
   nginx['ssl_certificate'] = "/etc/letsencrypt/live/gitlab.yourdomain.com/fullchain.pem"
   nginx['ssl_certificate_key'] = "/etc/letsencrypt/live/gitlab.yourdomain.com/privkey.pem"
-
 ```
 
 - Reconfigure GitLab
@@ -194,15 +197,15 @@ gitlab-ctl reconfigure
 ```
 
 
-
+<br><br><br>
 Alright, now we have our GitLab instance up and running.
-
+<br>
 - [x] Provisioned EC2 Instance
 - [x] Installed GitLab CE
 - [x] Configured Users and Groups
 - [x] Secured GitLab using LetsEncrypt SSL Certificates
 - [x] Enabled auto renewal for LetsEncrypt SSL Certificates
-
+<br><br><br>
 
 
 
