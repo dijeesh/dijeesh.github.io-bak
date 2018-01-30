@@ -181,6 +181,7 @@ Let's secure our GitLab instance using Free LetsEncrypt SSL Certificates
 ```
   Edit /etc/gitlab/gitlab.rb and
 ```
+
 ```
 1 Update external_url to use https
   external_url 'https://gitlab.yourdomain.com'
