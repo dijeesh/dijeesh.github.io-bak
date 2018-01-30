@@ -175,10 +175,12 @@ crontab -e
 
 Alright, now we have our GitLab instance up and running.
 
-:white_check_mark: Provisioned EC2 Instance
-:white_check_mark: Installed GitLab CE
-:white_check_mark: Configured Users and Groups
-:white_check_mark: Secured GitLab using LetsEncrypt SSL Certificates
-:white_check_mark: Enabled auto renewal for LetsEncrypt SSL Certificates
+- [x] Provisioned EC2 Instance
+- [x] Installed GitLab CE
+- [x] Configured Users and Groups
+- [x] Secured GitLab using LetsEncrypt SSL Certificates
+- [x] Enabled auto renewal for LetsEncrypt SSL Certificates
 
-Happy coding :heart:
+
+
+Happy coding :HEART:
