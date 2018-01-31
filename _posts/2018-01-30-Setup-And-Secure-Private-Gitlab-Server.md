@@ -222,7 +222,7 @@ gitlab-ctl reconfigure
 
 *Tips :*
 <br>
-[x] Enable backups for GitLab Instance
-[x] Convert the EC2 instance to a reserverd instance for cost savings.
+- [ ] Enable backups for GitLab Instance
+- [ ] Convert the EC2 instance to a reserverd instance for cost savings.
 <br><br><br>
 *Happy Coding !!*
