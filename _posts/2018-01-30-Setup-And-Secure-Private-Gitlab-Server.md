@@ -31,7 +31,9 @@ Provision EC2 Instance
 
 - Enable basic monitoring for the EC2 instance ( StatusCheckFailed )
 
--  Assign an EIP
+- Assign an EIP
+
+- Set host level firewall rules to allow incoming SSH, HTTP/HTTPS connections only
 
 
 
@@ -48,7 +50,7 @@ Provision EC2 Instance
 
 - Disable SELinux
 ```
-  sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+  sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 ```
 
 - Install basic system management tools
@@ -63,10 +65,10 @@ Provision EC2 Instance
 
 - Set static system hostname
 ```
-  hostnamectl set-hostname nr-oprs-db-002.dc4.sea.networkredux.net
-  hostnamectl set-hostname "nr-oprs-db-002.dc4.sea.networkredux.net" --pretty
-  hostnamectl set-hostname nr-oprs-db-002.dc4.sea.networkredux.net --static
-  hostnamectl set-hostname nr-oprs-db-002.dc4.sea.networkredux.net --transient
+  hostnamectl set-hostname gitlab.yourdomain.com
+  hostnamectl set-hostname "gitlab.yourdomain.com" --pretty
+  hostnamectl set-hostname gitlab.yourdomain.com --static
+  hostnamectl set-hostname gitlab.yourdomain.com --transient
 ```
 
 - Update /etc/hosts
@@ -208,7 +210,7 @@ gitlab-ctl reconfigure
 
 
 <br><br><br>
-Alright, now we have our GitLab instance up and running.
+*Alright, now we have our GitLab instance up and running.*
 <br>
 - [x] Provisioned EC2 Instance
 - [x] Installed GitLab CE
@@ -218,6 +220,9 @@ Alright, now we have our GitLab instance up and running.
 <br><br><br>
 
 
-
-
-Happy Coding !!
+*Tips :*
+<br>
+[x] Enable backups for GitLab Instance
+[x] Convert the EC2 instance to a reserverd instance for cost savings.
+<br><br><br>
+*Happy Coding !!*
