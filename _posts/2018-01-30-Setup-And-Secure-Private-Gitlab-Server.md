@@ -76,6 +76,13 @@ Provision EC2 Instance
   grep $(hostname) /etc/hosts || echo -e "127.1.0.1\t$(hostname)\t$(hostname -s)" >> /etc/hosts
 ```
 
+- Setup NTP Time Synchronization
+```
+  Edit /etc/ntp.conf and set `server 169.254.169.123 prefer iburst`
+
+  systemctl start ntpd; systemctl enable ntpd
+```
+
 - Restart EC2 instance.
 ```
   reboot
