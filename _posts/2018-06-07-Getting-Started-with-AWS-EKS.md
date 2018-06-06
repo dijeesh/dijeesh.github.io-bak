@@ -286,7 +286,9 @@ kubectl apply -f aws-auth-cm.yaml
 <br>
 ### 10  Done
 <br>
+
 Alright, Done.
+
 <br>
 We have Provisioned custom VPC, Provisioned EKS Cluster, Provisioned EKS Worker Nodes, Installed configuration map to enable nodes to join the cluster.  At this time you will have a EKS Cluster ready to deploy applications. Verify node status by running following command.
 
