@@ -32,7 +32,7 @@ By default, AWS CloudFormation templates provided in EKS Getting started guide w
 
 <br>
 
-### 1 Create Key Pair.
+### 1 Create Key Pair
 <br>
 - Open Amazon EC2 console, Navigate to NETWORK & SECURITY
 - Choose Key Pairs > Create Key Pair.   
