@@ -123,14 +123,18 @@ EOL
 
 chown ec2-user:ec2-user /home/ec2-user/.aws -R
 ```
-> Make sure to replace YOUR_AWS_REGION, STEP1_AWS_ACCESS_KEY_ID and STEP1_AWS_ACCESS_KEY_ID
+
+<br>
+```
+Make sure to replace YOUR_AWS_REGION, STEP1_AWS_ACCESS_KEY_ID and STEP1_AWS_ACCESS_KEY_ID
+```
 
 
 <br>
 ### 5 Create IAM Role for EKS Cluster
 <br>
 Create IAM role that K8 can assume to create AWS resources
-
+<br>
 
 - Open the IAM console at https://console.aws.amazon.com/iam/.
 - Choose Roles, then Create role.
@@ -217,9 +221,9 @@ If everything is fine, you will get your cluster details :)
 
 <br>
 ### 8  Launch EKS Worker Nodes
-
+<br>
 Let's use CloudFormation template provided by AWS EKS Getting started guide for provisioning Worker Nodes.
-
+<br>
 
 - Open the AWS CloudFormation console
 - Create Stack   
@@ -236,10 +240,13 @@ Let's use CloudFormation template provided by AWS EKS Getting started guide for 
 	- VpcId : Select our custom VPC
 	- Subnets : Select Private Subnets labeled EKS_PRIVATE_AZ01, and EKS_PRIVATE_AZ02
 
-
+<br>
 It will take some time to provision the instance, This CloudFormation template will provision our EKS Nodes (Worker) in VPC Private Subnets and it will be deployed using AutoScaling Group.
+<br>
 
-> Note down NodeInstanceRole IAM  Role ARN Created by the stack
+```
+Note down NodeInstanceRole IAM  Role ARN Created by the stack
+```
 
 
 <br>
@@ -276,7 +283,9 @@ kubectl apply -f aws-auth-cm.yaml
 <br>
 ### 10  Done
 <br>
-Alright, Done. We have Provisioned custom VPC, Provisioned EKS Cluster, Provisioned EKS Worker Nodes, Installed configuration map to enable nodes to join the cluster.  At this time you will have a EKS Cluster ready to deploy applications. Verify node status by running following command.
+Alright, Done.
+<br>
+We have Provisioned custom VPC, Provisioned EKS Cluster, Provisioned EKS Worker Nodes, Installed configuration map to enable nodes to join the cluster.  At this time you will have a EKS Cluster ready to deploy applications. Verify node status by running following command.
 
 ```
 kubectl get nodes
