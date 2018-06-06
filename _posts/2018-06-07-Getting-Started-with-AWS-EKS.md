@@ -155,7 +155,7 @@ At this stage, we are ready to provision our EKS Cluster.
 ```
 Logout from the AWS Console and re-login using the IAM user we create in first step.
 ```
-
+<br>
 
 - Open the Amazon EKS console
 - Choose Create Cluster
@@ -172,7 +172,7 @@ Logout from the AWS Console and re-login using the IAM user we create in first s
 ### 7  Configure Kubectl
 
 Now let's create a kubeconfig file for manging the EKS Cluster. Login to your kubectl node we created in step 4 and insert the codeblock to `.kube/config`
-
+<br>
 ```
 apiVersion: v1
 clusters:
@@ -201,8 +201,11 @@ users:
         - "-r"
         - ""
  ```
+<br>
 
-> Replace EKS_ENDPOINT_URL with your EKS Endpoint URL, BASE64_ENCODED_CA_CERT with certificateAuthority and CLUSTER_NAME with EKS Cluster name. You can get all these details from EKS Cluster Console.
+```
+Replace EKS_ENDPOINT_URL with your EKS Endpoint URL, BASE64_ENCODED_CA_CERT with certificateAuthority and CLUSTER_NAME with EKS Cluster name. You can get all these details from EKS Cluster Console.
+```
 
 Save the configuration file and execute following commands to use it.
 
