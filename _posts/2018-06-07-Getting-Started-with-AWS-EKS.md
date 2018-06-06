@@ -299,6 +299,10 @@ We have Provisioned custom VPC, Provisioned EKS Cluster, Provisioned EKS Worker 
 kubectl get nodes
 ```  
 
+<br>
+References : AWS EKS Documentations
+<br>
+
 
 <br>
 <br>
