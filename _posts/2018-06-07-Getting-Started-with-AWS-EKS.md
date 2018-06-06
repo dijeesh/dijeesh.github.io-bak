@@ -170,7 +170,7 @@ Logout from the AWS Console and re-login using the IAM user we create in first s
 
 <br>
 ### 7  Configure Kubectl
-
+<br>
 Now let's create a kubeconfig file for manging the EKS Cluster. Login to your kubectl node we created in step 4 and insert the codeblock to `.kube/config`
 <br>
 ```
