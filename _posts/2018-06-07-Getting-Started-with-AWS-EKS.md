@@ -9,7 +9,7 @@ comments: true
 ---
 
 ## Introduction
-
+<br>
 Finally, the long wait is over, Amazon Elastic Container Service for Kubernetes (Amazon EKS) is now generally available for all AWS customers.
 
 This new service is definitely going to help in our AWS deployments and migrations in coming days. To all those who are looking into deploying EKS, here are the steps I followed to setup the cluster using a custom VPC.
@@ -17,7 +17,7 @@ This new service is definitely going to help in our AWS deployments and migratio
 <br>
 <br>
 ## Custom VPC - Why?
-
+<br>
 By default, AWS CloudFormation templates provided in EKS Getting started guide will be provisioning a VPC spanning across 3 AZs and there will be only 3 Public Subnets.  But it's recommended to run the worker nodes in Private Subnets and dedicated subnets for your other resources like RDS, ElastiCache etc. Here is a simple diagram of my lab architecture.
 
 <br>
@@ -33,7 +33,7 @@ By default, AWS CloudFormation templates provided in EKS Getting started guide w
 <br>
 
 ### 1 Create Key Pair.
-
+<br>
 ```sh
 - Open Amazon EC2 console, Navigate to NETWORK & SECURITY
 - Choose Key Pairs > Create Key Pair.   
@@ -42,7 +42,7 @@ By default, AWS CloudFormation templates provided in EKS Getting started guide w
 
 <br>
 ### 2 Provision Custom VPC
-
+<br>
 Based on above architecture diagram, I have created a CloudFormation template and it's available here. Feel free to use or modify it.  https://gist.github.com/dijeesh/2bc2709009e5cc740d542d263f11068e
 
 ```sh
@@ -56,7 +56,7 @@ Based on above architecture diagram, I have created a CloudFormation template an
 
 <br>
 ### 3 Create an IAM user for EKS Administration
-
+<br>
 IAM User who creates the cluster is added to the K8 RBAC Authorization table as administrator. Initially, only that IAM user can make calls to API using kubectl. Let's create a new dedicated IAM user and use it for rest of the steps / Set-up AWS CLI for administration via kubectl.
 
 ```sh
@@ -74,12 +74,12 @@ IAM User who creates the cluster is added to the K8 RBAC Authorization table as 
 - Download Passwords and Keys and and store it securely
 ```
 
-> Restrict IAM Access using custom policy Ref: https://docs.aws.amazon.com/eks/latest/userguide/EKS_IAM_user_policies.html`
+> Restrict IAM Access using custom policy Ref: https://docs.aws.amazon.com/eks/latest/userguide/EKS_IAM_user_policies.html
 
 
 <br>
 ### 4 Configure kubectl control instance
-
+<br>
 You don't have to create a separate instance for kubectl, you can configure it on your local machine itself.  Here I have created a small dedicated instance and going to configure kubectl and other tools in it.
 
 ```sh
@@ -128,7 +128,7 @@ chown ec2-user:ec2-user /home/ec2-user/.aws -R
 
 <br>
 ### 5 Create IAM Role for EKS Cluster
-
+<br>
 Create IAM role that K8 can assume to create AWS resources
 
 ```
@@ -144,7 +144,7 @@ At this stage, we are ready to provision our EKS Cluster.
 
 <br>
 ### 6 Provision EKS Cluster
-
+<br>
 ```Logout from the AWS Console and re-login using the IAM user we create in first step.```
 
 ```
@@ -239,7 +239,7 @@ It will take some time to provision the instance, This CloudFormation template w
 
 <br>
 ### 9  Enable worker nodes to join the cluster.
-
+<br>
 Download configuration map
 
 ```
@@ -270,8 +270,8 @@ kubectl apply -f aws-auth-cm.yaml
 
 <br>
 ### 10  Done
-
-Alright, done. We have Provisioned custom VPC, Provisioned EKS Cluster, Provisioned EKS Worker Nodes, Installed configuration map to enable nodes to join the cluster.  At this time you will have a EKS Cluster ready to use. Verify node status by running
+<br>
+Alright, Done. We have Provisioned custom VPC, Provisioned EKS Cluster, Provisioned EKS Worker Nodes, Installed configuration map to enable nodes to join the cluster.  At this time you will have a EKS Cluster ready to deploy applications. Verify node status by running following command.
 
 ```
 kubectl get nodes
