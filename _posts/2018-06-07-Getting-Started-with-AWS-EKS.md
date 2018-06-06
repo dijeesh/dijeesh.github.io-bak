@@ -41,9 +41,12 @@ By default, AWS CloudFormation templates provided in EKS Getting started guide w
 
 ### 2 Provision Custom VPC
 <br>
-Based on above architecture diagram, I have created a CloudFormation template and it's available here. Feel free to use or modify it.  https://gist.github.com/dijeesh/2bc2709009e5cc740d542d263f11068e
-
-
+Based on above architecture diagram, I have created a CloudFormation template and it's available here. Feel free to use or modify it.
+<br>
+```
+ https://gist.github.com/dijeesh/2bc2709009e5cc740d542d263f11068e
+```
+<br>
 - Download and modify the template as per your requirement.
 - Open the AWS CloudFormation console
 - Create Stack   
