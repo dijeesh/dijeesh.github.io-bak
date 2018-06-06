@@ -34,32 +34,30 @@ By default, AWS CloudFormation templates provided in EKS Getting started guide w
 
 ### 1 Create Key Pair.
 <br>
-```sh
 - Open Amazon EC2 console, Navigate to NETWORK & SECURITY
 - Choose Key Pairs > Create Key Pair.   
 - Download the Key Pair and save it securely.
-```
-
 <br>
+
 ### 2 Provision Custom VPC
 <br>
 Based on above architecture diagram, I have created a CloudFormation template and it's available here. Feel free to use or modify it.  https://gist.github.com/dijeesh/2bc2709009e5cc740d542d263f11068e
 
-```sh
+
 - Download and modify the template as per your requirement.
 - Open the AWS CloudFormation console
 - Create Stack   
 - Select Upload Template to S3 and choose the template file
 - Provide a Stack Name: Eg EKS-LABS-CLUSTER-STACK
 - Provide a VPCName Eg EKS_LABS_VPC, this will be used to tag all resources
-```
+
 
 <br>
 ### 3 Create an IAM user for EKS Administration
 <br>
 IAM User who creates the cluster is added to the K8 RBAC Authorization table as administrator. Initially, only that IAM user can make calls to API using kubectl. Let's create a new dedicated IAM user and use it for rest of the steps / Set-up AWS CLI for administration via kubectl.
 
-```sh
+
 - Open the AWS IAM console
 - Navigate to Groups > Create New Group
 - Group Name : Administrators
@@ -72,9 +70,11 @@ IAM User who creates the cluster is added to the K8 RBAC Authorization table as 
 - Add user to group: Select Administrators group we previously created.
 - Review and Create User.
 - Download Passwords and Keys and and store it securely
-```
 
-> Restrict IAM Access using custom policy Ref: https://docs.aws.amazon.com/eks/latest/userguide/EKS_IAM_user_policies.html
+
+```
+Restrict IAM Access using custom policy Ref: https://docs.aws.amazon.com/eks/latest/userguide/EKS_IAM_user_policies.html
+```
 
 
 <br>
@@ -82,10 +82,10 @@ IAM User who creates the cluster is added to the K8 RBAC Authorization table as 
 <br>
 You don't have to create a separate instance for kubectl, you can configure it on your local machine itself.  Here I have created a small dedicated instance and going to configure kubectl and other tools in it.
 
-```sh
+
 - Open Amazon EC2 console
 - Create a EC2 instance using AWS Linux 2 AMI
-```
+
 
 ```
 # Install Kubectl
@@ -131,23 +131,28 @@ chown ec2-user:ec2-user /home/ec2-user/.aws -R
 <br>
 Create IAM role that K8 can assume to create AWS resources
 
-```
+
 - Open the IAM console at https://console.aws.amazon.com/iam/.
 - Choose Roles, then Create role.
 - Choose EKS from the list of services, then Allows Amazon EKS to manage your clusters on your behalf for your use case, then Next: Permissions.
 - Choose Next: Review.
 - For Role name, enter eks-service-role
+
 ```
-> Note down Role ARN for above created IAM Role
+Note down Role ARN for above created IAM Role
+```
 
 At this stage, we are ready to provision our EKS Cluster.
 
 <br>
 ### 6 Provision EKS Cluster
 <br>
-```Logout from the AWS Console and re-login using the IAM user we create in first step.```
 
 ```
+Logout from the AWS Console and re-login using the IAM user we create in first step.
+```
+
+
 - Open the Amazon EKS console
 - Choose Create Cluster
 - On Create cluster page,
@@ -157,7 +162,7 @@ At this stage, we are ready to provision our EKS Cluster.
 	- VPC : Select your custom VPC and Choose Public Subnets
 	- Security Groups : Select SG_EKS_CLUSTER_CONTROL_PLANE    
 - It will take few minutes to create the cluster.
-```
+
 
 <br>
 ### 7  Configure Kubectl
@@ -215,7 +220,7 @@ If everything is fine, you will get your cluster details :)
 
 Let's use CloudFormation template provided by AWS EKS Getting started guide for provisioning Worker Nodes.
 
-```sh
+
 - Open the AWS CloudFormation console
 - Create Stack   
 - Specify an Amazon S3 template URL ( https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-06-05/amazon-eks-nodegroup.yaml )
@@ -230,7 +235,7 @@ Let's use CloudFormation template provided by AWS EKS Getting started guide for 
 	- KeyName : EC2 SSH Key Pair (Step 1)
 	- VpcId : Select our custom VPC
 	- Subnets : Select Private Subnets labeled EKS_PRIVATE_AZ01, and EKS_PRIVATE_AZ02
-```
+
 
 It will take some time to provision the instance, This CloudFormation template will provision our EKS Nodes (Worker) in VPC Private Subnets and it will be deployed using AutoScaling Group.
 
