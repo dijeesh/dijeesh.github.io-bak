@@ -99,7 +99,7 @@ sudo mv kubectl /usr/local/bin/kubectl
 
 ```
 # Install heptio-authenticator-aws
-curl -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-06-05/bin/linux/amd64/heptio-authenticator-aws
+curl -o heptio-authenticator-aws https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-06-05/bin/linux/amd64/heptio-authenticator-aws
 chmod +x heptio-authenticator-aws
 sudo mv heptio-authenticator-aws /usr/local/bin/heptio-authenticator-aws
 ```
