@@ -63,7 +63,8 @@ global
       daemon
       stats socket /var/lib/haproxy/stats mode 777
 
-listen MySQL 0.0.0.0:3306
+listen MySQL 
+      bind 0.0.0.0:3306
       timeout connect 10s
       timeout client 1m
       timeout server 1m
