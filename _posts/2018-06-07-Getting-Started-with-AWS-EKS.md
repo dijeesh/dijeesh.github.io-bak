@@ -233,7 +233,7 @@ Let's use CloudFormation template provided by AWS EKS Getting started guide for 
 
 - Open the AWS CloudFormation console
 - Create Stack   
-- Specify an Amazon S3 template URL ( https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-06-05/amazon-eks-nodegroup.yaml )
+- Specify an Amazon S3 template URL ( https://amazon-eks.s3-us-west-2.amazonaws.com/cloudformation/2018-08-30/amazon-eks-nodegroup.yaml )
 	- Stack name : Provide a Stack Name
 	- ClusterName : Enter your EKS Cluster Name
 	- ClusterControlPlaneSecurityGroup : Select SG_EKS_CLUSTER_CONTROL_PLANE Security Group
@@ -241,7 +241,7 @@ Let's use CloudFormation template provided by AWS EKS Getting started guide for 
 	- NodeAutoScalingGroupMinSize : Minimum number of nodes in ASG
 	- NodeAutoScalingGroupMaxSize : Maximum number of nodes in ASG
 	- NodeInstanceType : Node Instance Type
-	- NodeImageId : Enter AMI ID [ami-73a6e20b (us-west-2), ami-dea4d5a1 (us-east-1) ]
+	- NodeImageId : Enter AMI ID [ami-0a54c984b9f908c81 (us-west-2), ami-0440e4f6b9713faf6 (us-east-1) ]
 	- KeyName : EC2 SSH Key Pair (Step 1)
 	- VpcId : Select our custom VPC
 	- Subnets : Select Private Subnets labeled EKS_PRIVATE_AZ01, and EKS_PRIVATE_AZ02
