@@ -64,16 +64,16 @@ Poornam Info Vision Private Limited is a outsourcing company which provides tech
 
 **Job Responsibilities**
 
-    - Installations, configurations, management and monitoring of Poornam In-house Servers (NIS, NFS, OpenAFS, LDAP, Apache, Nginx, OpenVZ, Vyatta, SVN and MySQL Servers)
-    - Implementing MySQL master slave replications for In-house Servers
-    - Implementing High-Availability for In-house Servers
-    - Ensure smooth functioning of 6 members Internal System Administrators team
-    - Ensure 100% uptime for In-house Servers ( Kochi, Germany and US Offices) 
-    - Ensure 100% uptime for internet connectivity by setting up and managing linux based routing systems.
-    - Installation, configuration and management of 200+ linux work stations.
-    - Managing VPN Connections between Kochi, Germany and US offices
-    - Planning, Implementing and testing BCP/DR Procedures for Poornam In-house Servers
-    - Configuring and Managing backups for Poornam In-house Servers.
-    - Assisting in-house security and quality assurance teams for various infrastructure audits and report generations.
-    - Generating and presenting timely infrastructure reports to management team
-    - Training Junior Team members
+- Installations, configurations, management and monitoring of Poornam In-house Servers (NIS, NFS, OpenAFS, LDAP, Apache, Nginx, OpenVZ, Vyatta, SVN and MySQL Servers)
+- Implementing MySQL master slave replications for In-house Servers
+- Implementing High-Availability for In-house Servers
+- Ensure smooth functioning of 6 members Internal System Administrators team
+- Ensure 100% uptime for In-house Servers ( Kochi, Germany and US Offices) 
+- Ensure 100% uptime for internet connectivity by setting up and managing linux based routing systems.
+- Installation, configuration and management of 200+ linux work stations.
+- Managing VPN Connections between Kochi, Germany and US offices
+- Planning, Implementing and testing BCP/DR Procedures for Poornam In-house Servers
+- Configuring and Managing backups for Poornam In-house Servers.
+- Assisting in-house security and quality assurance teams for various infrastructure audits and report generations.
+- Generating and presenting timely infrastructure reports to management team
+- Training Junior Team members
