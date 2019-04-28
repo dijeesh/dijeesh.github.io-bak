@@ -60,7 +60,7 @@ Mobile Strategic technology ( Mobile Sports-book technology, earlier) was an off
 	Apr 2010 - Oct 2010		Deputy Admin, Internal System Administrators	    
 	Sep 2008 - Mar 2010		Internal System Administrator			            
 	
-Poornam Info Vision Private Limited is a outsourcing company which provides technical support, software development and design services under the “Bobcares” brand.
+Poornam Info Vision Private Limited is an outsourcing company which provides technical support, software development, and design services under the “Bobcares” brand.
 
 **Job Responsibilities**
 
@@ -77,3 +77,18 @@ Poornam Info Vision Private Limited is a outsourcing company which provides tech
 - Assisting in-house security and quality assurance teams for various infrastructure audits and report generations.
 - Generating and presenting timely infrastructure reports to management team
 - Training Junior Team members
+
+<br> <br>
+
+### Technical Certifications
+		
+1. Amazon Certified Solution Architect Associate - Amazon Web Services 
+2. Junos, Associate (JNCIA-Junos) - Juniper Networks
+3. Security, Specialist (JNCIS-SEC) - Juniper Networks
+4. VMWare Certified Professional (VCP) - VMWare
+5. Red Hat Certified Engineer (RHCE) - Red Hat
+
+Currently working on pursuing following certifications
+	
+1. Amazon Certified Solution Architect Professional - Amazon Web Services
+2. Certified Kubernetes Administrator CKA - Cloud Native Computing Foundation
