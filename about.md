@@ -36,7 +36,7 @@ In love with nature, travel, photography, and football. When not playing with my
 # Areas of expertise
 
 - Linux System Administration
-- Cloud (Private | Public | Hybrid ) Solution Architect
+- Cloud (Private , Public , Hybrid ) Solution Architect
 - DevOPS Consultant
 - Virtualization, Containerization
 - Database Administration (MySQL, Postgres, Aurora, MongoDB)
