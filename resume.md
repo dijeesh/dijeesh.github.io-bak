@@ -33,7 +33,7 @@ Network Redux LLC is a Managed Cloud Services provider based in Portland, US. Ne
 
 #### January 2011 -  March 2012 	Mobile Strategic Technology ( Kochi, India )
 
-	Jan 2019 - Present		System Administrator, Production Support Team Lead
+	Jan 2011 - Mar 2012		System Administrator, Production Support Team Lead
 
 Mobile Strategic technology ( Mobile Sports-book technology, earlier) was an offshore development center of IMSC S.L engaged in SMS based sports betting applications (betty123).  Joined the MST team and built all IT Infrastructure from scratch. Taken over Production environments and led Production support team.
 
