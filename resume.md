@@ -50,7 +50,7 @@ Mobile Strategic technology ( Mobile Sports-book technology, earlier) was an off
 - Managing MST In-house Infrastructure ( built from scratch - SVN Servers, OpenVZ and VMware based development environments, NIS, NFS Servers, Linux based router and firewall systems, Jira, Confluence and Database Servers ).
 - Managing Jira, Confluence and SVN server environments.
 - Managing 3 member Production Support Team.
-- Managing Betty123 Production deployments, fine-tuning and trouble shooting. 
+- Managing Betty123 Production deployments, fine-tuning and trouble shooting production environments.
 
 <br>
 
