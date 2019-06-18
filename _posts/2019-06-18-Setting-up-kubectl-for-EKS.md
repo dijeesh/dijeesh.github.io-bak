@@ -49,7 +49,7 @@ Python v3 installed and the pip commands shown use the pip3 version.
 ```
 pip3 install awscli --upgrade --user
 ```
-Update $PATH
+Update $PATH (Add `export PATH=/home/redux/.local/bin/:$PATH` in bashrc)
 
 #### Install Using the Bundled Installer
 
