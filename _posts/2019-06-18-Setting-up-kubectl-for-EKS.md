@@ -69,7 +69,6 @@ Get Access Key and Secret Access Key for Production EKS Cluster user and configu
 aws configure
 ```
 
-We are using us-east-1 Region.
 
 <br>
 
