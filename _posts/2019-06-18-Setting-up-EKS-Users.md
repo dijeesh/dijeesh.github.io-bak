@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Setting up additional users in EKS
-description: Setting up additional users in EKS
+title: Setting up additional users in Amazon EKS
+description: Setting up additional users in Amazon EKS
 #image: /assets/media/Lamp.jpg
 Categories: [AWS]
 tags: [devops, sysops, aws, EKS, kubernetes, IAM, dijeeshpnair, kubectl ]
@@ -123,7 +123,7 @@ kubectl apply -f > aws-auth.yaml
 
 <br>
 
-## **4. Create an admin EKS ClusterRole**
+## **4. Create an EKS ClusterRole**
 
 Create file `eks-readonly-user-role.yaml` with following snippet and apply using kubectl
 
