@@ -12,7 +12,7 @@ In love with nature, travel, photography, and football. When not playing with my
 **- Network Redux LLC**  ( Marc 2012 - Present )
 
   - Associate Director, Cloud Services
-  - Lead Operations Engineer ↟
+  - Lead Operations Engineer - DevOps ↟
   - Senior Operations Engineer ↟
   - Senior System Architect ↟
   - System Architect ↟
