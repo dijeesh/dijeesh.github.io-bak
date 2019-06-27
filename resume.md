@@ -20,7 +20,7 @@ A dynamic, self-motivated Information Technology professional with over 10+ year
 
 #### March 2012 -  Present 			Network Redux India Private Limited ( Kochi, India )
 	
-	Jan 2019 - Present		Associate Director, Managed Cloud Services
+	Jan 2019 - Present		Associate Director, Cloud Services
 	Jan 2017 - Dec 2018		Lead Operations Engineer				    
 	Apr 2015 - Dec 2016		Senior Operations Engineer			        
 	Apr 2014 - Mar 2015		Senior System Architect				        
