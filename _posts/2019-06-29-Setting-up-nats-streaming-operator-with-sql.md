@@ -21,7 +21,7 @@ NATS.io is a simple, secure and high performance open source messaging system fo
 
 <br>
 
-##### **nats server and nats-streaming-server**
+#### nats server and nats-streaming-server
 
 NATS is available in two interoperable modules, the core NATS platform - the NATS server (executable name is gnatsd) referred to simply as NATS and NATS Streaming (executable name is nats-streaming-server)
 
@@ -33,7 +33,7 @@ NATS is available in two interoperable modules, the core NATS platform - the NAT
 
 <br>
 
-##### **nats-operator**
+#### nats-operator
 
 https://github.com/nats-io/nats-operator
 
@@ -45,7 +45,7 @@ This CRD allows for specifying the desired size and version for a NATS cluster, 
 
 <br>
 
-##### **nats-streaming-operator**
+#### nats-streaming-operator
 
 https://github.com/nats-io/nats-streaming-operator
 
@@ -57,6 +57,6 @@ To use DB store support it is needed to include the DB credentials within the NA
 
 <br>
 
-#### Setup Instructions 
+#### **Setup Instructions**
 
 Setup Instructions and deployment files are available in this [Github Repository](https://github.com/dijeesh/nats-streaming-operator-with-sql-backend)
