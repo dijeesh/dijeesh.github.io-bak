@@ -118,7 +118,7 @@ data:
 Apply aws-auth configmap
 
 ```
-kubectl apply -f > aws-auth.yaml
+kubectl apply -f aws-auth.yaml
 ```
 
 <br>

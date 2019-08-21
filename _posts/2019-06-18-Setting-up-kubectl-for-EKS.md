@@ -87,6 +87,8 @@ mkdir -p $HOME/bin && cp ./aws-iam-authenticator $HOME/bin/aws-iam-authenticator
 
 echo 'export PATH=$HOME/bin:$PATH' >> ~/.bash_profile
 
+source  ~/.bash_profile
+
 ```
 
 #### Linux
