@@ -133,11 +133,30 @@ apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: eks-readonly-user-role
 rules:
-- apiGroups: [ "*" ]
-  resources: ["*"]
-  verbs: ["*"]
-- nonResourceURLs: ["*"]
-  verbs: ["*"]
+- apiGroups:
+  - ""
+  resources:
+  - '*'
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - extensions
+  resources:
+  - '*'
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - apps
+  resources:
+  - '*'
+  verbs:
+  - get
+  - list
+  - watch  
   ```
 ```
 kubectl apply -f eks-readonly-user-role.yaml
