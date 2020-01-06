@@ -12,13 +12,14 @@ comments: true
 
 <br>
 
-![k8s](assets/media/2020-01-k8s-single-node.png.png)
+![k8s](assets/media/2020-01-k8s-single-node.png)
 
 
 ### Kubernetes
 <br>
 
 Kubernetes is an open-source container-orchestration system for automating application deployment, scaling, and management. It was originally designed by Google, and is now maintained by the Cloud Native Computing Foundation.
+
 <br>
 
 ### Single Node Kubernetes Cluster on AWS
@@ -32,17 +33,22 @@ In this article, I will share the steps to be done to set up a Single Node Kuber
 
 <br>
 
-1. Create a VPC with minimum 1 Public Subnet
+#### 1. Create a VPC with minimum 1 Public Subnet
 
 <br> <br>
 
-2. Create an Security Group for the Kubernetes Instances ( SG_K8S_CLUSTER_INSTANCES)
+#### 2. Create an Security Group for the Kubernetes Instances ( SG_K8S_CLUSTER_INSTANCES)
+
+Create an Security Group for the Kubernetes Instances ( Eg: SG_K8S_CLUSTER_INSTANCES)
+
+```
    Allow all connections from the VPC CIDR
    Allow 6443 from any Public IP from which you would like to manage the cluster
+```
 
 <br> <br>
 
-3. 3. Create IAM Policies
+#### 3. Create IAM Policies
 
 
 kubernetes-master-node-policy
@@ -150,58 +156,77 @@ kubernetes-worker-node-policy
 
 <br> <br>
 
-4. Create IAM role for the EC2 instance (Ref: https://github.com/kubernetes/cloud-provider-aws)
+#### 4. Create IAM role for the EC2 instance
 
+Create IAM role for the EC2 instance (Ref: https://github.com/kubernetes/cloud-provider-aws)
+
+```
 Create Role       : kubernetes-master-node-role 
 Attach Policies   : kubernetes-master-node-policy, kubernetes-worker-node-policy
+```
 
 <br> <br>
 
-5. Launch an EC2 Instance in VPC Public Subnet (Ubuntu 16.04) + Attach the Security Group you have created in Step 2 and Attach IAM Role created in Step 4
+#### 5. Launch an EC2 Instance 
+
+Launch an EC2 Instance in VPC Public Subnet (Ubuntu 16.04) + Attach the Security Group you have created in Step 2 and Attach IAM Role created in Step 4
 
 <br> <br>
 
-6. Install System updates + Set EC2 Hostname (The hostname of each node must match the EC2 Private DNS entry for the instance)
-   sudo hostnamectl set-hostname $(curl -s http://169.254.169.254/latest/meta-data/local-hostname)
-   
+#### 6. Install System updates + Set EC2 Hostname 
+
+Install System updates + Set EC2 Hostname (The hostname of each node must match the EC2 Private DNS entry for the instance)
+
+```
+sudo hostnamectl set-hostname $(curl -s http://169.254.169.254/latest/meta-data/local-hostname)
+```   
+
 <br> <br>
 
-7. Setup AWS Tags, Resources used by the cluster must have specific AWS tags assigned to them.
+#### 7. Setup AWS Tags, Resources used by the cluster must have specific AWS tags assigned to them.
 
 Attach following Tag to 
+
+```
 Key:    kubernetes.io/cluster/kubernetes    (kubernetes.io/cluster/<cluster-name>) 
 Value:  owned
+```
 
-    1. EC2 Instances
-    2. VPC
-    3. VPC Subnets
-    4. VPC Route Tables
-    5. VPC Internet gateway
-    6. VPC Security Group
-
-<br> <br>
-
-7. Install Docker
-
-    apt-get install     apt-transport-https     ca-certificates     curl     gnupg-agent     software-properties-common
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-    apt-key fingerprint 0EBFCD88
-    sudo add-apt-repository  "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-    apt-get install docker-ce docker-ce-cli containerd.io
-    systemctl start docker
-    systemctl enable docker
+1. EC2 Instances
+2. VPC
+3. VPC Subnets
+4. VPC Route Tables
+5. VPC Internet gateway
+6. VPC Security Group
 
 <br> <br>
 
-8. Install Kubeadm, kubelet, kubectl    
-    curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-    echo “deb https://apt.kubernetes.io/ kubernetes-xenial main” > /etc/apt/sources.list.d/kubernetes.list
-    apt update
-    apt install -y docker-ce kubelet kubeadm kubectl
+#### 8. Install Docker
+
+```
+apt-get install     apt-transport-https     ca-certificates     curl     gnupg-agent     software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+apt-key fingerprint 0EBFCD88
+sudo add-apt-repository  "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+apt-get install docker-ce docker-ce-cli containerd.io
+systemctl start docker
+systemctl enable docker
+```
 
 <br> <br>
 
-9. Create kubeadm configuration file ( /etc/kubernetes/aws.yml )   
+#### 9. Install Kubeadm, kubelet, kubectl    
+
+```
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo “deb https://apt.kubernetes.io/ kubernetes-xenial main” > /etc/apt/sources.list.d/kubernetes.list
+apt update
+apt install -y docker-ce kubelet kubeadm kubectl
+```
+
+<br> <br>
+
+#### 10. Create kubeadm configuration file ( /etc/kubernetes/aws.yml )   
 
 <br>
 
@@ -225,7 +250,7 @@ controllerManager:
 
 <br> <br>
 
-10. Bootstrap Kubernetes 
+#### 11. Bootstrap Kubernetes 
 
 ``` 
 kubeadm init --config=/etc/kubernetes/aws.yml
@@ -233,22 +258,27 @@ kubeadm init --config=/etc/kubernetes/aws.yml
 
 <br> <br>
 
-11. Once the setup is complete, You will get a message as follows + Additional details
+#### 12. Once the setup is complete, You will get a message as follows + Additional details
 
 Your Kubernetes control-plane has initialized successfully!
 
 <br> <br>
 
-12. Configure kubectl (You need to run the following as a regular user)
+#### 13. Configure kubectl (You need to run the following as a regular user)
 
-  mkdir -p $HOME/.kube
-  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+Configure kubectl 
+
+```
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
 
 <br> <br>
 
-13. Install Pod Network to the Cluster ( Ref: https://docs.projectcalico.org/v3.11/getting-started/kubernetes/)
+#### 14. Install Pod Network to the Cluster 
 
+Install Pod Network to the Cluster ( Ref: https://docs.projectcalico.org/v3.11/getting-started/kubernetes/)
 
 
 You should now deploy a pod network to the cluster.
@@ -257,7 +287,12 @@ Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
 
 Then you can join any number of worker nodes by running the following on each as root:
 
-kubeadm join 10.0.21.245:6443 --token tgjeqm.yukth01hiyl2pyrr \
-    --discovery-token-ca-cert-hash sha256:865defcfb2a8fabc0f23bd6bb1869a6bf78b6fecf12e371dfb5306817ee4ba5d
+<br> <br>
+
+#### 15 Adding additional Nodes 
+
+In case required, you can add additional nodes to this cluster by running following command as root after retreiving token and cert hash from the cluster
+
+kubeadm join x.x.x.x:6443 --token xxxx.xxxx --discovery-token-ca-cert-hash sha256:xxxxxxxxxxxxxxxx
 
     
