@@ -37,7 +37,7 @@ In this article, I will share the steps to be done to set up a Single Node Kuber
 
 <br> <br>
 
-#### 2. Create an Security Group for the Kubernetes Instances ( SG_K8S_CLUSTER_INSTANCES)
+#### 2. Create an Security Groups 
 
 Create an Security Group for the Kubernetes Instances ( Eg: SG_K8S_CLUSTER_INSTANCES)
 
