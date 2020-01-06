@@ -28,6 +28,7 @@ Kubernetes is an open-source container-orchestration system for automating appli
 
 In this article, I will share the steps to be done to set up a Single Node Kubernetes Cluster on AWS using kubeadm.  This is only for testing and learning purposes.
 
+<br> <br>
 
 ### Steps
 
@@ -308,11 +309,21 @@ You should now deploy a pod network to the cluster.
 Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
   https://kubernetes.io/docs/concepts/cluster-administration/addons/
 
-Then you can join any number of worker nodes by running the following on each as root:
+<br> <br>
+
+#### 15. Control Plane node isolation
+
+<br>
+
+By default, your cluster will not schedule pods on the control-plane node for security reasons. Run following command to enable it for scheduling
+
+```
+kubectl taint nodes --all node-role.kubernetes.io/master-
+```
 
 <br> <br>
 
-#### 15 Adding additional Nodes 
+#### 16 Adding additional Nodes 
 
 <br>
 
