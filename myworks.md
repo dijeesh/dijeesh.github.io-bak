@@ -5,6 +5,7 @@
 #### Solution
 #### Notes
 </p>
+</details>
 
 <details><summary>Crypto Currency Exchange Platform</summary>
 <p>
@@ -13,6 +14,7 @@
 #### Solution
 #### Notes
 </p>
+</details>
 
 <details><summary>Virtual HR System  </summary>
 <p>
@@ -21,6 +23,7 @@
 #### Solution
 #### Notes
 </p>
+</details>
 
 <details><summary>Hotel Reservation Management System </summary>
 <p>
@@ -29,6 +32,7 @@
 #### Solution
 #### Notes
 </p>
+</details>
 
 <details><summary>IOT Based Air-condition Management System</summary>
 <p>
@@ -37,3 +41,4 @@
 #### Solution
 #### Notes
 </p>
+</details>
