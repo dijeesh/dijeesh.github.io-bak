@@ -1,3 +1,8 @@
+#### HUG Kochi ( 2020 - Present)
+
+#### CNCF Kochi ( 2020 - Present)
+
+#### AWS User Group Kochi ( 2017 - Present)
 
 #### Network Redux LLC
 
