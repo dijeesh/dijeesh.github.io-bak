@@ -1,4 +1,8 @@
-<details><summary> AWS Platform for Cryptoc Broker System (EKS) </summary>
+
+#### Network Redux LLC
+
+
+<details><summary>AWS Platform for Cryptoc Broker System (EKS) </summary>
 <p>
 #### Project details
 #### Architecture
@@ -56,7 +60,7 @@
 - The company was focuzing on Mobile based betting applications. 
 
 
-<details><summary> VMWare Vsphere based Private Cloud Environment for hosting Betty123 applications </summary>
+<details><summary> VMware Vsphere based Private Cloud Environment for hosting Betty123 applications </summary>
 <p>
 #### Project details
 #### Architecture
