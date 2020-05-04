@@ -38,7 +38,7 @@
 </p>
 </details>
 
-<details><summary> AWS Platform for online Auction Markert Place (EC2/AutoScaling/DynamoDB/Aurora) </summary>
+<details><summary>AWS Platform for online Auction Markert Place (EC2/AutoScaling/DynamoDB/Aurora) </summary>
 <p>
 #### Project details
 #### Architecture
@@ -47,9 +47,32 @@
 </p>
 </details>
 
+<details><summary>Private Cloud Platform - High Available Private Cloud using Citrix XenServer </summary>
+<p>
+#### Project details
+#### Architecture
+#### Solution
+#### Notes
+</p>
+</details>
 
+<details><summary>Private Cloud Platform - High Available Web Application platform for Propery Management System </summary>
+<p>
+#### Project details
+#### Architecture
+#### Solution
+#### Notes
+</p>
+</details>
 
-
+<details><summary>Private Cloud Platform - High Available Web Application platform for Propery Management System </summary>
+<p>
+#### Project details
+#### Architecture
+#### Solution
+#### Notes
+</p>
+</details>
 
 
 
