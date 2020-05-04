@@ -4,7 +4,7 @@
 
 #### AWS User Group Kochi ( 2017 - Present)
 
-#### Network Redux LLC
+#### Network Redux LLC (2012 March  - Present)
 
 
 <details><summary>AWS Platform for Crypto Broker System (EKS) </summary>
@@ -153,7 +153,7 @@
 
 
 
-#### International Mobile Sportsbook Company | MST Kochi
+#### International Mobile Sportsbook Company | MST Kochi (2011 January  - 2012 March)
 
 - From January 2011 - March 2012, worked with MST Kochi and an offshore development center of International Mobile Sportsbook Company.
 - The company was focuzing on Mobile based betting applications. 
@@ -221,3 +221,6 @@
 #### Notes
 </p>
 </details>
+
+
+#### Poornam Info Vision Private Limited (2008 September  - 2011 January)
