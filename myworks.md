@@ -189,3 +189,30 @@
 #### Notes
 </p>
 </details>
+
+<details><summary> Implement/Manage and Maintain Atlasin Jira for Project Management platform </summary>
+<p>
+#### Project details
+#### Architecture
+#### Solution
+#### Notes
+</p>
+</details>
+
+<details><summary> Implement/Manage and Maintain Atlasin Confluence for Document Management platform </summary>
+<p>
+#### Project details
+#### Architecture
+#### Solution
+#### Notes
+</p>
+</details>
+
+<details><summary> Design, Implement and Manage OpenVZ based Inhouse Development Environment </summary>
+<p>
+#### Project details
+#### Architecture
+#### Solution
+#### Notes
+</p>
+</details>
