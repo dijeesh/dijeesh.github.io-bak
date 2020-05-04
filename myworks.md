@@ -2,7 +2,7 @@
 #### Network Redux LLC
 
 
-<details><summary>AWS Platform for Cryptoc Broker System (EKS) </summary>
+<details><summary>AWS Platform for Crypto Broker System (EKS) </summary>
 <p>
 #### Project details
 #### Architecture
@@ -92,7 +92,7 @@
 </p>
 </details>
 
-<details><summary>Operations - Backups Infrastructure for Redux VPC/E-VS/Private Cloud Platforms </summary>
+<details><summary>Operations - Backups Infrastructure for Redux VPS/E-VS/Private Cloud Platforms </summary>
 <p>
 #### Project details
 #### Architecture
