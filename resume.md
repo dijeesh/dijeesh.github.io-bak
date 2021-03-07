@@ -3,7 +3,7 @@ Dijeesh Padinharethil
 
 Working on updating Resume here, will be online soon.
 
-For the time being, Ref linkedin profile :  https://www.linkedin.com/in/dijeesh-padinharethil/
+For the time being, Ref linkedin profile :  https://www.linkedin.com/in/dijeeshpnair/
 
 --------
 
@@ -82,13 +82,14 @@ Poornam Info Vision Private Limited is an outsourcing company which provides tec
 
 ### Technical Certifications
 		
-1. Amazon Certified Solution Architect Associate - Amazon Web Services 
-2. Junos, Associate (JNCIA-Junos) - Juniper Networks
-3. Security, Specialist (JNCIS-SEC) - Juniper Networks
-4. VMWare Certified Professional (VCP) - VMWare
-5. Red Hat Certified Engineer (RHCE) - Red Hat
+1. Certified Kubernetes Administrator CKA - Cloud Native Computing Foundation
+2. Amazon Certified Solution Architect Associate - Amazon Web Services 
+3. Junos, Associate (JNCIA-Junos) - Juniper Networks
+4. Security, Specialist (JNCIS-SEC) - Juniper Networks
+5. VMWare Certified Professional (VCP) - VMWare
+6. Red Hat Certified Engineer (RHCE) - Red Hat
 
 Currently working on pursuing following certifications
 	
 1. Amazon Certified Solution Architect Professional - Amazon Web Services
-2. Certified Kubernetes Administrator CKA - Cloud Native Computing Foundation
+2. Certified Kubernetes Security Specialist CKS - Cloud Native Computing Foundation
