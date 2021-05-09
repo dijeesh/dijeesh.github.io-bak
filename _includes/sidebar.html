@@ -1,91 +1,74 @@
-<!--
-  The Side Bar
--->
+<! -- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="{{ site.BASE_PATH }}">
+		<img src="{{site.author.uno-dbyll}}" class="img-circle" style="border-radius: 50%;
+border: 3px solid #FFF; height:150px;width:150px" />
+	</a>
+	<h3 class="title">
+        <a href="{{ site.BASE_PATH }}">{{ site.title }}</a>
+         <p style="font-size:20px;">{{ site.author.role }}</p>
+    </h3>
 
-<div id="sidebar" class="d-flex flex-column align-items-end">
+    <hr class="hr-line">
+<h3 class="title">
+         <p style="font-size:18px">{{ site.author.bio }}</p>
+    </h3>
 
-  <div class="profile-wrapper text-center">
-    <div id="avatar">
-      <a href="{{ '/' | relative_url }}" alt="avatar" class="mx-auto">
-        {% capture avatar_url %}
-          {%- if site.avatar contains '://' -%}
-            {{ site.avatar }}
-          {%- elsif site.img_cdn != '' and site.img_cdn -%}
-            {{ site.avatar | prepend: site.img_cdn }}
-          {%- else -%}
-            {{ site.avatar | relative_url }}
-          {%- endif -%}
-        {% endcapture %}
-        <img src="{{ avatar_url }}" alt="avatar" onerror="this.style.display='none'">
+    <hr class="hr-line1">
+ <h3 class="title" style="font-size:30px;">
+
+       {% if site.author.github %}
+      <a type="button" class="social1" href="http://github.com/{{ site.author.github }}">
+        <i class="fa fa-github"></i>
       </a>
-    </div>
-
-    <div class="site-title mt-3">
-      <a href="{{ '/' | relative_url }}">{{- site.title -}}</a>
-    </div>
-
-    <div class="site-subtitle font-italic">{{- site.tagline -}}</div>
-
-  </div><!-- .profile-wrapper -->
-
-  <ul class="w-100">
-    <!-- home -->
-    <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
-      <a href="{{ '/' | relative_url }}" class="nav-link">
-        <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
-        <span>{{ "HOME" }}</span>
-      </a>
-    </li>
-    <!-- the real tabs -->
-    {% for tab in site.tabs %}
-    <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
-      <a href="{{ tab.url | relative_url }}" class="nav-link">
-        <i class="fa-fw {{ tab.icon }} ml-xl-3 mr-xl-3 unloaded"></i>
-        <span>{{ tab.title | upcase }}</span>
-      </a>
-    </li> <!-- .nav-item -->
-    {% endfor %}
-
-  </ul> <!-- ul.nav.flex-column -->
-
-  <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center">
-
-    {% for entry in site.data.contact %}
-      {% capture url %}
-        {%- if entry.type == 'github' -%}
-          https://github.com/{{ site.github.username }}
-        {%- elsif entry.type == 'twitter' -%}
-          https://twitter.com/{{ site.twitter.username }}
-        {%- elsif entry.type == 'email' -%}
-          {% assign email = site.social.email | split: '@' %}
-          javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
-        {%- elsif entry.type == 'rss' -%}
-          {{ "/feed.xml" | relative_url }}
-        {%- else -%}
-          {{ entry.url }}
-        {%- endif -%}
-      {% endcapture %}
-
-      {% if url %}
-      <a href="{{ url }}" aria-label="{{ entry.type }}"
-        {% unless site.theme_mode %}class="order-{{ forloop.index | plus: 2 }}"{% endunless %}
-        {% unless entry.noblank %}target="_blank" rel="noopener"{% endunless %}>
-        <i class="{{ entry.icon }}"></i>
+      {% endif %}
+       {% if site.author.twitter %}
+      <a type="button" class="social1" href="http://twitter.com/{{ site.author.twitter }}">
+        <i class="fa fa-twitter"></i>
       </a>
       {% endif %}
 
-    {% endfor %}
+			{% if site.author.linkedin %}
+			<a type="button" class="social1" href="http://linkedin.com/in/{{ site.author.linkedin }}">
+				<i class="fa fa-linkedin"></i>
+			</a>
+			{% endif %}
 
-    {% unless site.theme_mode %}
-      {% if site.data.contact.size > 0 %}
-        <span class="icon-border order-2"></span>
+			{% if site.author.instagram %}
+			<a type="button" class="social1" href="http://instagram.com/{{ site.author.instagram }}">
+				<i class="fa fa-instagram"></i>
+			</a>
+			{% endif %}
+
+			{% if site.author.email %}
+      <a type="button" class="social1" href="mailto:{{ site.author.email }}">
+        <i class="fa fa-envelope"></i>
+      </a>
       {% endif %}
 
-      <span id="mode-toggle-wrapper" class="order-1">
-        {% include mode-toggle.html %}
-      </span>
-    {% endunless %}
 
-  </div> <!-- .sidebar-bottom -->
 
-</div><!-- #sidebar -->
+       <hr class="hr-line1">
+       <a type="button"  style="font-size:15px; padding:6px; padding-left:13px;padding-right:13px;margin-right: 10px;" class="social3 " id="btnblog" href="{{ site.BASE_PATH }}/#blog">
+        <i class="fa" style="font-weight:bold;letter-spacing:0; font-family:arial,sans-serif">Blog</i>
+      </a>
+
+
+			<a type="button"  style="font-size:15px; padding:6px; padding-left:13px;padding-right:13px;margin-right: 10px;" class="social3 " id="btnAbout" href="{{ site.BASE_PATH }}/about">
+			 <i class="fa" style="font-weight:bold;letter-spacing:0; font-family:arial,sans-serif">About</i>
+		  </a>
+
+
+		  <a type="button"  style="font-size:15px; padding:6px; padding-left:13px;padding-right:13px;margin-right: 10px;" class="social3 " id="btnResume" href="{{ site.BASE_PATH }}/resume">
+		  <i class="fa" style="font-weight:bold;letter-spacing:0; font-family:arial,sans-serif">Resume</i>
+      </a>
+      
+		  <a type="button"  style="font-size:15px; padding:6px; padding-left:13px;padding-right:13px;margin-right: 10px;" class="social3 " id="btnWorks" href="{{ site.BASE_PATH }}/myworks">
+        <i class="fa" style="font-weight:bold;letter-spacing:0; font-family:arial,sans-serif">Works</i>
+        </a>      
+
+</header>
+
+
+
+<! -- sidebar.html end -->

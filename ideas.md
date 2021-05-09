@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Learn and share"
+title: "Diju : Learn and share"
 ---
 
 <br/>
